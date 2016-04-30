@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @message = 'ENV['S3_BUCKET_NAME']'
+    Rails.logger.info "——————————————————————————————— S3_BUCKET_NAME: #{ENV['S3_BUCKET_NAME']} ———————————————————————————————"
+    @message = ENV['S3_BUCKET_NAME']
   end
 end
