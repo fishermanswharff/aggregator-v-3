@@ -13,9 +13,9 @@
 # group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, %w{ubuntu@52.36.157.107}
-role :web, %w{ubuntu@52.36.157.107}
-role :db,  %w{ubuntu@52.36.157.107}
+role :app, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
+role :web, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
+role :db, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
 
 # Configuration
 # =============
@@ -41,11 +41,11 @@ role :db,  %w{ubuntu@52.36.157.107}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server '52.36.157.107',
-  user: 'ubuntu',
+server , "#{ENV[AWS_ELASTIC_IP]}",
+  user: "#{ENV['AWS_SUDO_USER']}",
   roles: %w{web app},
   ssh_options: {
-    user: 'ubuntu', # overrides user setting above
+    user: "#{ENV['AWS_SUDO_USER']}", # overrides user setting above
     keys: %w(~/.ssh/fishermanswharff.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)
