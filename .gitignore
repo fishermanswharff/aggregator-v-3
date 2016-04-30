@@ -22,7 +22,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
-
+/.project/
 ## Specific to RubyMotion:
 .dat*
 .repl_history
