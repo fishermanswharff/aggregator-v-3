@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/' => 'home#index'
+  root to: 'home#index'
 
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter', via: [:get,:post]
