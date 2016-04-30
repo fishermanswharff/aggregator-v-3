@@ -1,3 +1,4 @@
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -13,9 +14,13 @@
 # group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
-role :web, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
-role :db, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
+aws_info = fetch(:default_env)
+user = aws_info['aws_user']
+elastic_ip = aws_info['elastic_ip']
+
+role :app, ["#{user}@#{elastic_ip}"]
+role :web, ["#{user}@#{elastic_ip}"]
+role :db, ["#{user}@#{elastic_ip}"]
 
 # Configuration
 # =============
@@ -41,11 +46,11 @@ role :db, ["#{ENV['AWS_SUDO_USER']}@#{ENV[AWS_ELASTIC_IP]}"]
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server , "#{ENV[AWS_ELASTIC_IP]}",
-  user: "#{ENV['AWS_SUDO_USER']}",
+server "#{elastic_ip}",
+  user: "#{user}",
   roles: %w{web app},
   ssh_options: {
-    user: "#{ENV['AWS_SUDO_USER']}", # overrides user setting above
+    user: "#{user}", # overrides user setting above
     keys: %w(~/.ssh/fishermanswharff.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)
