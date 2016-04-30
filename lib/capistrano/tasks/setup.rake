@@ -21,7 +21,7 @@ namespace :setup do
     end
   end
 
-  desc "Symlinks config files for Nginx and Unicorn."
+  desc "Symlinks config files for Nginx and Passenger"
   task :symlink_config do
     on roles(:app) do
       # execute "rm -f /etc/nginx/sites-enabled/default"

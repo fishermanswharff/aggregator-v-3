@@ -24,6 +24,13 @@ set :deploy_to, '/home/ubuntu/www/aggregator'
 # Default value for :pty is false
 # set :pty, true
 
+env_file = 'config/capistrano_aws.yml'
+if File.exists?(env_file)
+  YAML.load_file(env_file).each do |key, value|
+    ENV[key.to_s] = value
+  end
+end
+
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml','config/secrets.yml','config/env.yml')
 
@@ -32,10 +39,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :default_env, {
-  'aws_user' => 'ubuntu',
-  'elastic_ip' => '52.38.90.233'
-}
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 

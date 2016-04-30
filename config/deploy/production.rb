@@ -1,4 +1,4 @@
-
+require 'pry'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -14,9 +14,10 @@
 # group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-aws_info = fetch(:default_env)
-user = aws_info['aws_user']
-elastic_ip = aws_info['elastic_ip']
+
+user = ENV['AWS_SUDO_USER']
+elastic_ip = ENV['AWS_ELASTIC_IP']
+binding.pry
 
 role :app, ["#{user}@#{elastic_ip}"]
 role :web, ["#{user}@#{elastic_ip}"]

@@ -37,7 +37,7 @@ build/
 /config/database.yml
 /config/env.yml
 /config/secrets.yml
-
+/config/capistrano_aws.yml
 ## Environment normalisation:
 /.bundle/
 /lib/bundler/man/
