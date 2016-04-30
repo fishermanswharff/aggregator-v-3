@@ -16,7 +16,7 @@ gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug'
-  gem "rspec-rails", "~> 3.1.0"
+  gem "rspec-rails", "~> 3.1"
   gem "pry-byebug"
   gem "pry-rails"
   gem "factory_girl_rails", "~> 4.0"
