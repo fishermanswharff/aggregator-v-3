@@ -17,7 +17,6 @@ require 'pry'
 
 user = ENV['AWS_SUDO_USER']
 elastic_ip = ENV['AWS_ELASTIC_IP']
-binding.pry
 
 role :app, ["#{user}@#{elastic_ip}"]
 role :web, ["#{user}@#{elastic_ip}"]
