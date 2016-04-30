@@ -7,7 +7,7 @@
     %meta{ name: 'apple-mobile-web-app-status-bar-style', content: 'white' }
     %meta{ name: 'format-detection', content: 'telephone=yes' }
     %meta{ name: 'mobile-web-app-capable', content: 'yes' }
-    %script{ src: '//use.typekit.net/kkm1ywq.js' }
+    %script{ src: 'https://use.typekit.net/kkm1ywq.js' }
     :javascript
       try{Typekit.load();}catch(e){}
     = stylesheet_link_tag 'application'
@@ -19,4 +19,6 @@
 
     %main
       = yield
+
+    %script{ src:'https://code.jquery.com/jquery-2.2.3.js', integrity: 'sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=', crossorigin: "anonymous" }
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
