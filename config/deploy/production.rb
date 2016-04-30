@@ -13,9 +13,9 @@
 # group is considered to be the first unless any  hosts have the primary
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
-role :app, %w{ubuntu@52.35.47.68}
-role :web, %w{ubuntu@52.35.47.68}
-role :db,  %w{ubuntu@52.35.47.68}
+role :app, %w{ubuntu@52.36.157.107}
+role :web, %w{ubuntu@52.36.157.107}
+role :db,  %w{ubuntu@52.36.157.107}
 
 # Configuration
 # =============
@@ -41,7 +41,7 @@ role :db,  %w{ubuntu@52.35.47.68}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server '52.35.47.68',
+server '52.36.157.107',
   user: 'ubuntu',
   roles: %w{web app},
   ssh_options: {
