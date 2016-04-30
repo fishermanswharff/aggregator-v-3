@@ -33,6 +33,7 @@ build/
 /_yardoc/
 /doc/
 /rdoc/
+/config/database.yml
 /config/env.yml
 ## Environment normalisation:
 /.bundle/
