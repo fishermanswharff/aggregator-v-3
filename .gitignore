@@ -36,6 +36,7 @@ build/
 /notes/
 /config/database.yml
 /config/env.yml
+/config/secrets.yml
 
 ## Environment normalisation:
 /.bundle/

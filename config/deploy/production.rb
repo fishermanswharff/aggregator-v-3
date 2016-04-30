@@ -46,7 +46,7 @@ server '52.36.157.107',
   roles: %w{web app},
   ssh_options: {
     user: 'ubuntu', # overrides user setting above
-    keys: %w(~/.ssh/apprunner-1.pem),
+    keys: %w(~/.ssh/fishermanswharff.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)
   }
