@@ -1,46 +1,23 @@
-# config valid only for current version of Capistrano
-lock '3.5.0'
-
-set :application, 'aggregator'
-set :repo_url, 'git@github.com:fishermanswharff/aggregator-v-3.git'
-
-
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-
-# Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/ubuntu/www/aggregator'
-
-# Default value for :scm is :git
-# set :scm, :git
-
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
-
-# You can configure the Airbrussh format using :format_options.
-# These are the defaults.
-# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
-
-# Default value for :pty is false
-# set :pty, true
-
 env_file = 'config/capistrano_aws.yml'
 if File.exists?(env_file)
   YAML.load_file(env_file).each do |key, value|
     ENV[key.to_s] = value
   end
 end
-
-# Default value for :linked_files is []
+# config valid only for current version of Capistrano
+lock '3.5.0'
+set :application, 'aggregator'
+set :repo_url, 'git@github.com:fishermanswharff/aggregator-v-3.git'
+set :deploy_to, '/home/ubuntu/www/aggregator'
+set :scm, :git
+set :format, :airbrussh
+set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 set :linked_files, fetch(:linked_files, []).push('config/database.yml','config/secrets.yml','config/env.yml')
-
-# Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
-
-# Default value for default_env is {}
+set :keep_releases, 5
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# Default value for keep_releases is 5
-# set :keep_releases, 5
+# set :pty, true
 
 namespace :deploy do
   after :restart, :clear_cache do
