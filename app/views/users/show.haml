@@ -1,3 +1,8 @@
+%h1= "#{user.first_name} #{user.last_name}"
+%ul
+  %li You've signed in #{user.sign_in_count} times.
+  %li Your last sign was on #{user.last_sign_in_at.to_formatted_s(:long_ordinal)}
+
 = form_for user do |f|
   %h3 Edit your account:
   .form-group
@@ -16,4 +21,4 @@
     = f.label 'role'
     = f.select :role, User.roles.keys.map{ |k| [k,k] }, {}, { selected: user.role, disabled: true }
   .form-group
-    = f.submit
+    = f.submit 'Update User', class: 'button'

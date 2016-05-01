@@ -1,3 +1,7 @@
 .flash
-  %p.notice= notice
-  %p.alert= alert
+  - if flash[:notice]
+    .callout.success
+      %p.notice= notice
+  - if flash[:alert]
+    .callout.alert
+      %p.alert= alert
