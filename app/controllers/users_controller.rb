@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_filter :is_admin?, only: [:index]
 
   def login
-    user = User.find_by(username: params[:username])
-    if user && user = user.authenticate(params[:password])
+    user = User.find_by(username: user_params[:username])
+    if user && user = user.authenticate(user_params[:password])
       user.increment_sign_in_count
       user.set_current_sign_in
       session[:current_user_id] = user.token
@@ -30,7 +30,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    render json: @user
+    respond_to do |format|
+      format.html { render locals: { user: @user } }
+      format.json { render json: @user }
+    end
   end
 
   def create

@@ -1,0 +1,19 @@
+= form_for user do |f|
+  %h3 Edit your account:
+  .form-group
+    = f.label 'username'
+    = f.text_field :username
+  .form-group
+    = f.label 'first_name'
+    = f.text_field :first_name
+  .form-group
+    = f.label 'last_name'
+    = f.text_field :last_name
+  .form-group
+    = f.label 'email'
+    = f.email_field :email
+  .form-group
+    = f.label 'role'
+    = f.select :role, User.roles.keys.map{ |k| [k,k] }, {}, { selected: user.role, disabled: true }
+  .form-group
+    = f.submit
