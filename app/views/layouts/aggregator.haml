@@ -13,7 +13,7 @@
     = stylesheet_link_tag 'application'
     = csrf_meta_tags
   %body
-    = render partial: 'shared/navbar'#, locals: { current_user: current_user }
+    = render partial: 'shared/navbar', locals: { current_user: current_user }
     - unless flash.nil? || flash.empty?
       = render partial: 'shared/flash', locals: { flash: flash }
 

@@ -1,3 +1,5 @@
 %nav.navbar
   %ul.menu
-    %li= link_to 'Home', '/'
+    %li= link_to 'Home', root_path
+    - if current_user.present?
+      %li= link_to 'Logout', logout_path

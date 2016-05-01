@@ -1,1 +1,7 @@
-%h1= @message
+- unless current_user.present?
+  = render partial: 'shared/login'
+
+- if current_user.present?
+  %h1
+    = message
+    = current_user.username

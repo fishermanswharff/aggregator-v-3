@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  resources :users
+
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter', via: [:get,:post]
+
+  post '/login', to: 'users#login'
+  get '/logout', to: 'users#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
