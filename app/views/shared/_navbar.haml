@@ -6,8 +6,10 @@
     %ul.menu
       %li.menu-text Aggregator
       %li= link_to 'Home', root_path
-  - if is_logged_in
-    .top-bar-right
-      %ul.menu
+  .top-bar-right
+    %ul.menu
+      - if is_logged_in
         %li= link_to 'Logout', logout_path
         %li= link_to 'Account', user_path(current_user)
+      - else
+        %li= link_to 'Log In', login_path

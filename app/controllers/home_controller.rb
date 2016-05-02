@@ -4,6 +4,5 @@ class HomeController < ApplicationController
       message: 'hello',
       current_user: current_user
     }
-    Rails.logger.info "——————————————————— #{session[:current_user_id]} ———————————————————"
   end
 end
