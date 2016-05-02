@@ -22,7 +22,7 @@ set :keep_releases, 5
 namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      execute "touch www/aggregator/current/tmp/restart.txt"
+      execute "touch #{current_path}/tmp/restart.txt"
       # Here we can do anything such as:
       # within release_path do
       #  execute :rake, 'cache:clear'
@@ -30,6 +30,18 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  desc 'reopen passenger logs'
+  task :passenger_reopen_logs do
+    execute "passenger-config reopen-logs"
+  end
+
+  desc 'restart-app'
+  task :passenger_restart_app do
+    on roles(:web) do
+      execute "passenger-config restart-app #{current_path}"
+    end
+  end
+
+  after :publishing, :passenger_reopen_logs, :passenger_restart_app
   after :finishing, :cleanup
 end
