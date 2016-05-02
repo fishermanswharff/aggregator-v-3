@@ -38,6 +38,7 @@ build/
 /config/env.yml
 /config/secrets.yml
 /config/capistrano_aws.yml
+/config/redis.conf
 ## Environment normalisation:
 /.bundle/
 /lib/bundler/man/
@@ -65,3 +66,4 @@ tags
 *.swp
 *.swo
 *.log
+*.rdb
