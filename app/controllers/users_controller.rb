@@ -32,7 +32,6 @@ class UsersController < ApplicationController
         format.html { redirect_to user_path(@user), flash: { notice: "#{@user.username} Updated!" } }
         format.json { render json: @user, status: :ok }
       end
-      # render json: @user, status: :ok
     else
       render json: @user.errors, status: :unprocessable_entity
     end

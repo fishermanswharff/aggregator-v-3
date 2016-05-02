@@ -15,30 +15,40 @@ User
   has_many :magazines
   has_many :magazines_articles
   has_many :articles, through: :magazines_articles
-  has_many :followers, as: followeable
+  has_many :followers, as: :followeable
+  has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
 
 AuthenticationProvider
   # table_name :authentication_providers
   string :name
+  —————————————————
+  has_many :user_authentications, dependent: :destroy
+  has_many :users, through: :user_authentications
 
 UserAuthentication
+  # table_name :user_authentications
   references :user
   references :authentication_provider
   string :uid
   string :token
   datetime :token_expires_at
-  string :hstore
+  hstore :params
+  —————————————————
+  belongs_to :user
+  belongs_to :authentication_provider
 
 Topics
+  # table_name :topics
   integer :id
   string :name
   —————————————————
   has_many :feedstopics
-  has_many :feeds, through: :feedstopics
+  has_many :feeds, through: :feeds_topics
   has_many :articles_topics
   has_many :articles, through: :article_topics
 
 Feed
+  # table_name :feeds
   integer :id
   string :url (xml/rss/atom feed url)
   string :name (feed name, derived from feed)
@@ -48,6 +58,7 @@ Feed
   has_many :followers, as: followeable (users)
 
 FeedsTopics
+  # table_name :feeds_topics
   integer :id
   integer :topic_id
   integer :feed_id
@@ -56,6 +67,7 @@ FeedsTopics
   has_many :followers, as: followeable
 
 ArticlesTopics
+  # table_name :articles_topics
   integer :id
   integer :topic_id
   integer :article_id
@@ -65,6 +77,7 @@ ArticlesTopics
   has_many :followers, as: followeable
 
 Article
+  # table_name :articles
   integer :id
   string :url
   string :title (derived from the article)
@@ -74,6 +87,7 @@ Article
   belongs_to :magazine
 
 Magazine
+  # table_name :magazines
   name :string
   references :user
   —————————————————
@@ -82,6 +96,7 @@ Magazine
   has_many :followers, as: followeable
 
 MagazinesArticles
+  # table_name :magazines_articles
   integer :id
   references :magazine
   references :article
@@ -90,6 +105,7 @@ MagazinesArticles
   belongs_to :article
 
 Follower
+  # table_name :followers
   data migration something like:
     t.references :followeable, polymorphic: true, index: true
   or:
