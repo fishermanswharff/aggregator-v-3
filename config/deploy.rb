@@ -32,7 +32,9 @@ namespace :deploy do
 
   desc 'reopen passenger logs'
   task :passenger_reopen_logs do
-    execute "passenger-config reopen-logs"
+    on roles(:web) do
+      execute "passenger-config reopen-logs"
+    end
   end
 
   desc 'restart-app'
