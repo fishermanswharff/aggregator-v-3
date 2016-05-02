@@ -2,25 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
   before_filter :is_admin?, only: [:index]
 
-  def login
-    user = User.find_by(username: user_params[:username])
-    if user && user = user.authenticate(user_params[:password])
-      user.increment_sign_in_count
-      user.set_current_sign_in
-      session[:current_user_id] = user.token
-      redirect_to root_path
-    else
-      render 'home/index', status: :unauthorized
-    end
-  end
-
-  def logout
-    user = User.find_by(token: session[:current_user_id])
-    user.set_last_sign_in
-    session[:current_user_id] = nil
-    redirect_to root_path
-  end
-
   def index
     @users = User.all
     respond_to do |format|

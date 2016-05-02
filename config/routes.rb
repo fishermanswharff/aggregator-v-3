@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter', via: [:get,:post]
 
-  post '/login', to: 'users#login'
-  get '/logout', to: 'users#logout'
+  get 'login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

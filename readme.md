@@ -9,12 +9,25 @@ Wireframes and schema preparation:
 
 ```ruby
 User
+  # table_name :users
   {...user_attributes}
   —————————————————
   has_many :magazines
   has_many :magazines_articles
   has_many :articles, through: :magazines_articles
   has_many :followers, as: followeable
+
+AuthenticationProvider
+  # table_name :authentication_providers
+  string :name
+
+UserAuthentication
+  references :user
+  references :authentication_provider
+  string :uid
+  string :token
+  datetime :token_expires_at
+  string :hstore
 
 Topics
   integer :id
