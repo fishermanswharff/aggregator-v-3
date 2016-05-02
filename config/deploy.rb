@@ -33,7 +33,7 @@ namespace :deploy do
   desc 'reopen passenger logs'
   task :passenger_reopen_logs do
     on roles(:web) do
-      execute "passenger-config reopen-logs"
+      execute "sudo passenger-config reopen-logs"
     end
   end
 
@@ -44,6 +44,6 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :passenger_reopen_logs, :passenger_restart_app
+  after :publishing, :passenger_reopen_logs, :passenger_restart_app, :restart
   after :finishing, :cleanup
 end
