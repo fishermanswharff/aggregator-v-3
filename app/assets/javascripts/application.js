@@ -15,4 +15,23 @@
 //= require foundation
 //= require_tree .
 
-$(document).foundation();
+(function(w,d,$){
+
+  var twitterHandler = function(event){
+    $.ajax({
+      url: '/users/auth/twitter',
+      type: 'GET',
+      success: function(data){
+        window.location.href = data.url;
+      }
+    })
+  };
+
+  $(function(){
+    $('#oauth_twitter').on('click', twitterHandler);
+    console.log('hello world');
+    $(document).foundation();
+  });
+
+})(window, document, jQuery);
+

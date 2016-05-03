@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
-  match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter', via: [:get,:post]
+  match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter_callback', via: [:get,:post]
 
   get 'login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

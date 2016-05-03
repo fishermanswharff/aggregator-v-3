@@ -1,14 +1,12 @@
-require 'OAuth'
-
 class TwitterOauthStrategy
-  attr_reader :token, :url
-
-  def initialize(token, url)
-    @token = token
-    @url = url
+  def initialize
   end
 
-  def request_token
-    OAuth::RequestToken.new('twitter', @token, url)
+  def request_token(token, url)
+    OAuth::RequestToken.new('twitter', token, url)
+  end
+
+  def access_token(data)
+    OAuth::AccessToken.new('twitter', data)
   end
 end

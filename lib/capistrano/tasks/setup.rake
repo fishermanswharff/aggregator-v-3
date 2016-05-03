@@ -1,6 +1,6 @@
 require 'pry'
 namespace :setup do
-  desc "Upload database.yml file."
+  desc "Upload all the secrets."
   task :upload_yml do
     on roles(:app) do
       upload! StringIO.new(File.read("config/database.yml")), "#{shared_path}/config/database.yml"

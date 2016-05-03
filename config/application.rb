@@ -38,6 +38,8 @@ module Gator3
     )
 
     config.eager_load_paths += %W(
+      #{Rails.root}/app/services/
+      #{Rails.root}/lib/modules/
       #{Rails.root}/lib/
     )
 

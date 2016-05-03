@@ -44,6 +44,13 @@ namespace :deploy do
     end
   end
 
+  desc 'nginx restart'
+  task :nginx_restart do
+    on roles(:web) do
+      execute 'sudo service nginx restart'
+    end
+  end
+
   after :publishing, :passenger_reopen_logs, :passenger_restart_app, :restart
   after :finishing, :cleanup
 end

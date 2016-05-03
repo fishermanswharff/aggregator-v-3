@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160430135704) do
+ActiveRecord::Schema.define(version: 20160503012957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authentication_providers", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentication_providers", ["name"], name: "index_authentication_providers_on_name", using: :btree
+
+  create_table "user_authentications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "authentication_provider_id"
+    t.string   "uid",                                     null: false
+    t.string   "token",                                   null: false
+    t.datetime "token_expires_at"
+    t.jsonb    "params",                     default: {}, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
+  add_index "user_authentications", ["params"], name: "index_user_authentications_on_params", using: :gin
+  add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -41,4 +64,6 @@ ActiveRecord::Schema.define(version: 20160430135704) do
   add_index "users", ["token"], name: "index_users_on_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "user_authentications", "authentication_providers"
+  add_foreign_key "user_authentications", "users"
 end
