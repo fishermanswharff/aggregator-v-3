@@ -29,6 +29,12 @@ class User < ActiveRecord::Base
     message: 'Sorry, something is wrong with your email address.'
   }
 
+  has_many :authentications,
+    class_name: 'UserAuthentication',
+    dependent: :destroy
+  has_many :authentication_providers,
+    through: :authentications
+
   def increment_sign_in_count
     self.sign_in_count += 1
     self.save!

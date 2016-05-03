@@ -1,8 +1,13 @@
 %h1= "#{user.first_name} #{user.last_name}"
 %ul
-  %li You've signed in #{user.sign_in_count} times.
-  %li Your last sign was on #{user.last_sign_in_at.to_formatted_s(:long_ordinal)}
+  %li You've signed in #{pluralize(user.sign_in_count, 'time')}.
+  %li Your last sign was #{user.last_sign_in_at&.to_formatted_s(:long_ordinal) || 'never'}
   %li Your account was created on #{user.created_at.to_formatted_s(:long_ordinal)}
+- if user.authentications.any?
+  You've authorized Gator with:
+  %ul
+    - user.authentications.each do |auth|
+      %li= auth.authentication_provider.name.capitalize
 
 = form_for user do |f|
   %h3 Edit your account:
