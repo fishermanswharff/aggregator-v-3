@@ -6,4 +6,6 @@ class Follower < ActiveRecord::Base
 
   validates_associated :user
   validates :followable_type, inclusion: { in: ALLOWED_TYPES }
+
+  scope :user_followers, -> (user_id) { where(followable_id: user_id, followable_type: 'User') }
 end

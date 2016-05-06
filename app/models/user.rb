@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   has_many :authentication_providers,
     through: :authentications
   has_many :following, class_name: 'Follower'
-  has_many :friends, through: :following, source: :followable, source_type: 'User'
+  has_many :followed, through: :following, source: :followable, source_type: 'User'
   has_many :feeds, through: :following, source: :followable, source_type: 'Feed'
   has_many :topics, through: :following, source: :followable, source_type: 'Topic'
 
@@ -44,6 +44,18 @@ class User < ActiveRecord::Base
   def set_last_sign_in
     self.last_sign_in_at = self.current_sign_in_at
     self.save!
+  end
+
+  def authenticated_with(provider)
+    authentication_providers.pluck(:name).include?(provider)
+  end
+
+  def twitter_feed
+    'Twitter coming soon'
+  end
+
+  def user_followers
+    Follower.user_followers(id)
   end
 
   private

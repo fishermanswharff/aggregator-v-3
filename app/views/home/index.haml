@@ -1,13 +1,26 @@
-- unless current_user.present?
-  %h3 Gator v.3 Coming Soon
+.container
+  - unless current_user.present?
+    %h3 Gator v.3 Coming Soon
 
-- if current_user.present?
-  %h1
-    = message
-    = current_user.username
-  = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
+  - if current_user.present?
+    %h1
+      = message
+      = current_user.username
+    - unless current_user.authenticated_with('twitter')
+      = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
+    - else
+      = current_user.twitter_feed
 
-- topics.each do |topic|
-  %h3= topic.name
-  - topic.feeds.each do |feed|
-    %h6= link_to feed.name, feed.url
+  .grid_6.sidebar
+    .group
+      Following #{current_user.followed.count}
+    .group
+      Followers #{current_user.user_followers.count}
+
+
+  .grid_10
+    - topics.each do |topic|
+      %h3= topic.name
+      - topic.feeds.each do |feed|
+        %h6= link_to feed.name, feed.url
+
