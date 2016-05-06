@@ -9,9 +9,13 @@ class Feed < ActiveRecord::Base
   after_create :save_description
 
   has_many :feed_topics
-  has_many :topics, through: :feed_topics
-  has_many :followers, as: :followable
-  has_many :users, through: :followers
+  has_many :topics,
+    through: :feed_topics
+
+  has_many :followers,
+    as: :followable
+  has_many :users,
+    through: :followers
 
   def fetch_feed
     Feedjira::Feed.fetch_and_parse url
