@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503012957) do
+ActiveRecord::Schema.define(version: 20160506013719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,47 @@ ActiveRecord::Schema.define(version: 20160503012957) do
   end
 
   add_index "authentication_providers", ["name"], name: "index_authentication_providers_on_name", using: :btree
+
+  create_table "feed_topics", force: :cascade do |t|
+    t.integer  "feed_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feed_topics", ["feed_id"], name: "index_feed_topics_on_feed_id", using: :btree
+  add_index "feed_topics", ["topic_id"], name: "index_feed_topics_on_topic_id", using: :btree
+
+  create_table "feeds", force: :cascade do |t|
+    t.text     "name",        default: "", null: false
+    t.text     "url",         default: "", null: false
+    t.text     "description", default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "feeds", ["name"], name: "index_feeds_on_name", using: :btree
+  add_index "feeds", ["url", "name"], name: "index_feeds_on_url_and_name", unique: true, using: :btree
+  add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
+
+  create_table "followers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "followable_id"
+    t.string   "followable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "followers", ["followable_type", "followable_id"], name: "index_followers_on_followable_type_and_followable_id", using: :btree
+  add_index "followers", ["user_id", "followable_id", "followable_type"], name: "index_followers_on_user_followable_id_followable_type", unique: true, using: :btree
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "name",       default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["name"], name: "index_topics_on_name", using: :btree
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -64,6 +105,8 @@ ActiveRecord::Schema.define(version: 20160503012957) do
   add_index "users", ["token"], name: "index_users_on_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "feed_topics", "feeds"
+  add_foreign_key "feed_topics", "topics"
   add_foreign_key "user_authentications", "authentication_providers"
   add_foreign_key "user_authentications", "users"
 end

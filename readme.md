@@ -47,6 +47,17 @@ Topics
   has_many :articles_topics
   has_many :articles, through: :article_topics
 
+Follower
+  # table_name :followers
+  data migration something like:
+    t.references :followeable, polymorphic: true, index: true
+  or:
+    string :name
+    integer :followable_id
+    string :followeable_type #(feed, user, topic, etc.)
+  —————————————————
+  belongs_to :followeable, polymorphic: true
+
 Feed
   # table_name :feeds
   integer :id
@@ -57,11 +68,12 @@ Feed
   has_many :topics, through: :feedstopics
   has_many :followers, as: followeable (users)
 
-FeedsTopics
+FeedTopics
   # table_name :feeds_topics
   integer :id
   integer :topic_id
   integer :feed_id
+  —————————————————
   belongs_to :topic
   belongs_to :feed
   has_many :followers, as: followeable
@@ -104,16 +116,6 @@ MagazinesArticles
   belongs_to :magazine
   belongs_to :article
 
-Follower
-  # table_name :followers
-  data migration something like:
-    t.references :followeable, polymorphic: true, index: true
-  or:
-    string :name
-    integer :followable_id
-    string :followeable_type #(feed, user, topic, etc.)
-  —————————————————
-  belongs_to :followeable, polymorphic: true
 ```
 
 Todos:

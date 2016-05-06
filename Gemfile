@@ -24,6 +24,7 @@ group :development, :test do
   gem 'byebug'
   gem "pry-byebug"
   gem "pry-rails"
+  gem "faker"
 end
 
 group :test do
@@ -31,7 +32,6 @@ group :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'database_cleaner'
   gem "codeclimate-test-reporter", require: nil
-  gem "faker"
 end
 
 group :development do

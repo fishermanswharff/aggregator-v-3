@@ -6,3 +6,8 @@
     = message
     = current_user.username
   = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
+
+- topics.each do |topic|
+  %h3= topic.name
+  - topic.feeds.each do |feed|
+    %h6= link_to feed.name, feed.url

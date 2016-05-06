@@ -1,24 +1,6 @@
-# t.string :first_name
-# t.string :last_name
-# t.string :username, null: false
-# t.integer :role, null: false, default: 1 # defaults to generic user account
-# t.string :email, unique: true, null: false
-# t.string :password_digest
-# t.string :token
-
-# t.string :reset_password_token
-# t.datetime :reset_password_sent_at
-# t.datetime :remember_created_at
-
-# t.integer :sign_in_count, default: 0, null: false
-# t.datetime :current_sign_in_at
-# t.datetime :last_sign_in_at
-# t.timestamps null:false
-
 class User < ActiveRecord::Base
   before_validation :set_token
   has_secure_password
-
   enum role: { admin: 0, regular: 1 }
 
   validates :email, :username, presence: true
@@ -34,6 +16,10 @@ class User < ActiveRecord::Base
     dependent: :destroy
   has_many :authentication_providers,
     through: :authentications
+  has_many :following, class_name: 'Follower'
+  has_many :friends, through: :following, source: :followable, source_type: 'User'
+  has_many :feeds, through: :following, source: :followable, source_type: 'Feed'
+  has_many :topics, through: :following, source: :followable, source_type: 'Topic'
 
   def increment_sign_in_count
     self.sign_in_count += 1
