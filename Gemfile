@@ -19,6 +19,9 @@ gem 'redis-rack-cache'
 gem 'rack-cache'
 gem 'nokogiri'
 gem 'feedjira'
+gem 'twitter'
+gem 'linkedin'
+gem 'instagram'
 
 group :development, :test do
   gem 'byebug'

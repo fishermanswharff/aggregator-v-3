@@ -3,14 +3,6 @@ class User < ActiveRecord::Base
   has_secure_password
   enum role: { admin: 0, regular: 1 }
 
-  validates :email, :username, presence: true
-  validates :email, :username, uniqueness: true
-  validates :password, :password_confirmation, presence: true, on: :create
-  validates :email, format: {
-    with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
-    message: 'Sorry, something is wrong with your email address.'
-  }
-
   has_many :authentications,
     class_name: 'UserAuthentication',
     dependent: :destroy
@@ -20,6 +12,14 @@ class User < ActiveRecord::Base
   has_many :followed, through: :following, source: :followable, source_type: 'User'
   has_many :feeds, through: :following, source: :followable, source_type: 'Feed'
   has_many :topics, through: :following, source: :followable, source_type: 'Topic'
+
+  validates :email, :username, presence: true
+  validates :email, :username, uniqueness: true
+  validates :password, :password_confirmation, presence: true, on: :create
+  validates :email, format: {
+    with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
+    message: 'Sorry, something is wrong with your email address.'
+  }
 
   def increment_sign_in_count
     self.sign_in_count += 1
@@ -51,7 +51,9 @@ class User < ActiveRecord::Base
   end
 
   def twitter_feed
-    'Twitter coming soon'
+    auth = get_auth('twitter')
+    twitter = TwitterClient.new(auth.params['oauth_token'], auth.params['oauth_token_secret'])
+    twitter.tweets
   end
 
   def user_followers
@@ -76,5 +78,9 @@ class User < ActiveRecord::Base
 
   def generate_token
     SecureRandom.uuid.gsub(/\-/,'')
+  end
+
+  def get_auth(provider)
+    authentications.joins(user: :authentication_providers).where(authentication_providers: { name: provider }).first
   end
 end
