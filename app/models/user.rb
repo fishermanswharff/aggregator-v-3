@@ -8,18 +8,32 @@ class User < ActiveRecord::Base
     dependent: :destroy
   has_many :authentication_providers,
     through: :authentications
-  has_many :following, class_name: 'Follower'
-  has_many :followed, through: :following, source: :followable, source_type: 'User'
-  has_many :feeds, through: :following, source: :followable, source_type: 'Feed'
-  has_many :topics, through: :following, source: :followable, source_type: 'Topic'
+  has_many :following,
+    class_name: 'Follower'
+  has_many :followed,
+    through: :following,
+    source: :followable,
+    source_type: 'User'
+  has_many :feeds,
+    through: :following,
+    source: :followable,
+    source_type: 'Feed'
+  has_many :topics,
+    through: :following,
+    source: :followable,
+    source_type: 'Topic'
 
-  validates :email, :username, presence: true
-  validates :email, :username, uniqueness: true
-  validates :password, :password_confirmation, presence: true, on: :create
-  validates :email, format: {
-    with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
-    message: 'Sorry, something is wrong with your email address.'
-  }
+  validates :email, :username,
+    presence: true
+  validates :email, :username,
+    uniqueness: true
+  validates :password, :password_confirmation,
+    presence: true, on: :create
+  validates :email,
+    format: {
+      with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
+      message: 'Sorry, something is wrong with your email address.'
+    }
 
   def increment_sign_in_count
     self.sign_in_count += 1
