@@ -1,21 +1,22 @@
-.container
+.row
   - unless current_user.present?
     %h3 Gator v.3 Coming Soon
 
   - if current_user
-    %h3= current_user.username
-    - unless current_user.authenticated_with('twitter')
-      = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
 
-    .grid_4.sidebar
+    .medium-3.columns.sidebar
+      .group
+        %h3= current_user.username
+        - unless current_user.authenticated_with('twitter')
+          = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
       .group
         Following #{current_user.followed.count}
       .group
         Followers #{current_user.user_followers.count}
   - else
-    .grid_4
+    .medium-3.columns
       = render partial: 'shared/login'
-  .grid_12
+  .medium-9.columns
     - if current_user.authenticated_with('twitter')
       = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed, user: current_user }
     - topics.each do |topic|

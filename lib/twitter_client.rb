@@ -1,15 +1,14 @@
 class TwitterClient
 
-  attr_reader :client
+  attr_reader :client, :token
 
   def initialize(token, secret)
+    @token = token
     @client = get_client(token: token, secret: secret)
   end
 
   def tweets
-    Rails.cache.fetch([:user_tweets, self], expires_in: 15.minutes) do
-      client.home_timeline
-    end
+    client.home_timeline
   end
 
   def get_client(token: token, secret: secret)

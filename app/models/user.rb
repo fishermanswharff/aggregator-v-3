@@ -67,7 +67,9 @@ class User < ActiveRecord::Base
   def twitter_feed
     auth = get_auth('twitter')
     twitter = TwitterClient.new(auth.params['oauth_token'], auth.params['oauth_token_secret'])
-    twitter.tweets
+    Rails.cache.fetch([:user_tweets, "#{auth.params['oauth_token']}"], expires_in: 15.minutes) do
+      twitter.tweets
+    end
   end
 
   def user_followers

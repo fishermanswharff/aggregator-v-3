@@ -1,33 +1,23 @@
--# Memoizable::InstanceMethods#methods: freeze  memoize
--# Twitter::Base#methods: []  attrs  to_h  to_hash  to_hsh
--# #<Equalizer:0x007fc54ec1ac08>#methods: hash  inspect
--# Equalizer::Methods#methods: ==  eql?
--# Twitter::Identity#methods: id  id?
--# Twitter::Creatable#methods: created?  created_at
--# Twitter::Entities#methods: entities?  hashtags  hashtags?  media  media?  symbols  symbols?  uris  uris?  urls  urls?  user_mentions  user_mentions?
--# Twitter::Tweet#methods: 
--#   favorite_count    filter_level             in_reply_to_screen_name?  lang       possibly_sensitive   quoted_tweet?   retweeted?         source      uri  
--#   favorite_count?   filter_level?            in_reply_to_status_id     lang?      possibly_sensitive?  reply?          retweeted_status   source?     url  
--#   favorited         full_text                in_reply_to_status_id?    metadata   quote?               retweet?        retweeted_status?  text        user 
--#   favorited?        geo                      in_reply_to_tweet_id      metadata?  quoted_status        retweet_count   retweeted_tweet    text?       user?
--#   favoriters_count  geo?                     in_reply_to_user_id       place      quoted_status?       retweet_count?  retweeted_tweet?   truncated 
--#   favorites_count   in_reply_to_screen_name  in_reply_to_user_id?      place?     quoted_tweet         retweeted       retweeters_count   truncated?
--# instance variables: @_memoized_method_cache  @attrs
-:ruby
-
-
-
 .tweet{ id: "#{user.id}-timeline-tweet-#{tweet.id}"}
   - if tweet.metadata?
     .metadata{ data: tweet.metadata }
   .profile-image
     = image_tag tweet.user.profile_image_url
-  .handle
-    #{tweet.user.name} #{tweet.user.screen_name}
-  .tweet-text
-    = tweet.text
-  .tweet-media
-    - if tweet.media?
-      - tweet.media.each do |m|
-        = image_tag m.media_url, width: m.sizes[:medium].w, height: m.sizes[:medium].h
-      -# = tweet.to_hash
+  .tweet-body
+    .handle
+      %span.user-name= tweet.user.name
+      %span.user-handle @#{tweet.user.screen_name}
+    .tweet-text
+      = tweet.text
+      - if tweet.hashtags?
+        - tweet.hashtags.each do |hashtag|
+          != ##{hashtag.text}
+    .tweet-media
+      - if tweet.media?
+        - tweet.media.each do |m|
+          - if m.attrs[:type] == 'video'
+            = video_tag(m.attrs[:video_info][:variants].map{|var| var[:url]}, size: "#{m.sizes[:medium].w}x#{m.sizes[:medium].h}", controls: true, autobuffer: true)
+          - elsif m.attrs[:type] == 'photo'
+            = link_to m.attrs[:expanded_url] do
+              = image_tag m.media_url, width: m.sizes[:medium].w, height: m.sizes[:medium].h
+    -# = tweet.to_hash
