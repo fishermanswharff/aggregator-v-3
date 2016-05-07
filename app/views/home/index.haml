@@ -17,7 +17,7 @@
       = render partial: 'shared/login'
   .grid_12
     - if current_user.authenticated_with('twitter')
-      = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed }
+      = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed, user: current_user }
     - topics.each do |topic|
       %h3= topic.name
       - topic.feeds.each do |feed|
