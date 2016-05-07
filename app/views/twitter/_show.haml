@@ -2,7 +2,7 @@
   tweet_text = tweet.text.dup
   tweet.urls.map do |url|
     url_to_match = tweet.text[url.indices.first...url.indices.last]
-    tweet_text.gsub!(url_to_match, link_to(url.attrs[:url], url.attrs[:url]))
+    tweet_text.gsub!(url_to_match, link_to(url.attrs[:display_url], url.attrs[:url]))
   end
   if tweet.media?
     tweet.media.map { |m| tweet_text.gsub!(m.url.to_s, link_to(m.url.to_s, m.url.to_s)) }

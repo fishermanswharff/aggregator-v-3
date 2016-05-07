@@ -1,0 +1,19 @@
+.medium-3.columns.sidebar
+  - if user
+    .group
+      %h3= user.username
+    .group
+      Following #{user.followed.count}
+    .group
+      Followers #{user.user_followers.count}
+    .group
+      - unless user.authenticated_with('twitter')
+        = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'
+      - else
+        = link_to 'Twitter Feed', twitter_timeline_path
+  - else
+    = render partial: 'shared/login'
+  - topics.each do |topic|
+    %h3= topic.name
+    - topic.feeds.each do |feed|
+      %h6= link_to feed.name, feed.url

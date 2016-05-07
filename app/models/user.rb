@@ -76,6 +76,14 @@ class User < ActiveRecord::Base
     Follower.user_followers(id)
   end
 
+  def top_feeds
+    feeds.map do |f|
+      parsed = Feedjira::Feed.fetch_and_parse(f.url)
+      parsed.entries.slice!(3, parsed.entries.length - 3)
+      parsed
+    end
+  end
+
   private
 
   def udpate_remember_created_at
