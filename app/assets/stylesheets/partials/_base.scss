@@ -28,6 +28,12 @@ main {}
   .profile-image {
     @include flex(1);
     margin: 0 .5em;
+
+    img {
+      border-radius: 6px;
+      width: 100%;
+      height: auto;
+    }
   }
 
   .tweet-body {

@@ -1,9 +1,16 @@
 :ruby
   tweet_text = tweet.text.dup
-  tweet.urls.map { |url| tweet_text.gsub!(url.attrs[:url], link_to(url.attrs[:url], url.attrs[:url])) }
-  if tweet.media?
-    tweet.media.map { |media| tweet_text.gsub!(media.url, link_to(media.url.to_s, media.url.to_s)) }
+  tweet.urls.map do |url|
+    url_to_match = tweet.text[url.indices.first...url.indices.last]
+    tweet_text.gsub!(url_to_match, link_to(url.attrs[:url], url.attrs[:url]))
   end
+  if tweet.media?
+    tweet.media.map { |m| tweet_text.gsub!(m.url.to_s, link_to(m.url.to_s, m.url.to_s)) }
+  end
+- if tweet.hashtags?
+  - hash_tags = capture_haml(tweet.hashtags) do |hashtags|
+    - hashtags.each do |hashtag|
+      - tweet_text.gsub!("##{hashtag.text}", link_to("##{hashtag.text}", "https://twitter.com/search?q=%23#{hashtag.text}&src=typd&lang=en"))
 
 .tweet{ id: "#{user.id}-timeline-tweet-#{tweet.id}"}
   - if tweet.metadata?
@@ -16,9 +23,6 @@
       %span.user-handle= link_to("@#{tweet.user.screen_name}", tweet.user.url.to_s)
     .tweet-text
       != tweet_text
-      - if tweet.hashtags?
-        - tweet.hashtags.each do |hashtag|
-          != "##{hashtag.text}"
     .tweet-media
       - if tweet.media?
         - tweet.media.each do |m|
