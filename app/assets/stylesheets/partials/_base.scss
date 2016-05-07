@@ -32,5 +32,37 @@ main {}
 
   .tweet-body {
     @include flex(10);
+
+    .handle {
+      .user-name a {
+        color: $charcoal;
+        font-weight: bold;
+      }
+
+      .user-handle a {
+        color: $aluminum;
+        font-weight: normal;
+      }
+    }
+
+    .tweet-text {
+      color: $charcoal;
+      font-size: .9em;
+      margin-bottom: 1em;
+    }
+
+    .tweet-media {
+
+      a {
+        display: block;
+        border-radius: 6px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
   }
 }

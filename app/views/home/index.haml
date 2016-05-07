@@ -3,7 +3,6 @@
     %h3 Gator v.3 Coming Soon
 
   - if current_user
-
     .medium-3.columns.sidebar
       .group
         %h3= current_user.username
@@ -17,8 +16,9 @@
     .medium-3.columns
       = render partial: 'shared/login'
   .medium-9.columns
-    - if current_user.authenticated_with('twitter')
-      = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed, user: current_user }
+    - if current_user
+      - if current_user.authenticated_with('twitter')
+        = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed, user: current_user }
     - topics.each do |topic|
       %h3= topic.name
       - topic.feeds.each do |feed|
