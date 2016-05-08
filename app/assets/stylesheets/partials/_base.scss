@@ -58,11 +58,11 @@ main {}
     }
 
     .tweet-media {
-
       a {
         display: block;
         border-radius: 6px;
         overflow: hidden;
+        max-height: 300px;
 
         img {
           width: 100%;

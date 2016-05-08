@@ -1,6 +1,8 @@
 .row
   - if current_user.present?
-    = render partial: 'shared/sidebar', locals: { user: current_user, topics: topics }
-    = render partial: 'home/main_feed', locals: { user: current_user, topics: topics }
+    = render partial: 'shared/sidebar', locals: { user: current_user, topics: current_user.topics, feeds: current_user.feeds, all_feeds: all_feeds }
+    = render partial: 'home/main_feed', locals: { user: current_user, topics: topics, feeds: current_user.top_feeds }
   - else
-    %h3 Gator v.3 Coming Soon
+    = render partial: 'shared/sidebar', locals: { user: nil, topics: [], feeds: [], all_feeds: all_feeds }
+    .medium-9.columns
+      %h3 Gator v.3 Coming Soon

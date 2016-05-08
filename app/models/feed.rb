@@ -37,7 +37,7 @@ class Feed < ActiveRecord::Base
 
   def save_description
     parsed = fetch_feed
-    self.description = parsed.description
+    self.description = parsed.description || ''
     self.save!
   end
 end

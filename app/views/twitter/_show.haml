@@ -7,11 +7,11 @@
   if tweet.media?
     tweet.media.map { |m| tweet_text.gsub!(m.url.to_s, link_to(m.url.to_s, m.url.to_s)) }
   end
-- if tweet.hashtags?
-  - hash_tags = capture_haml(tweet.hashtags) do |hashtags|
-    - hashtags.each do |hashtag|
-      - tweet_text.gsub!("##{hashtag.text}", link_to("##{hashtag.text}", "https://twitter.com/search?q=%23#{hashtag.text}&src=typd&lang=en"))
-
+  if tweet.hashtags?
+    tweet.hashtags.each do |hashtag|
+      tweet_text.gsub!("##{hashtag.text}", link_to("##{hashtag.text}", "https://twitter.com/search?q=%23#{hashtag.text}&src=typd&lang=en"))
+    end
+  end
 .tweet{ id: "#{user.id}-timeline-tweet-#{tweet.id}"}
   - if tweet.metadata?
     .metadata{ data: tweet.metadata }

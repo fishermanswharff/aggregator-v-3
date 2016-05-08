@@ -1,3 +1,5 @@
+require 'o_auth'
+
 class Users::OmniauthCallbacksController < ApplicationController
   def passthru
     self.send(params[:provider])

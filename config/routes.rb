@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :users
+  resources :users do
+    member do
+      get 'followers'
+      post 'following'
+    end
+  end
+
+  resources :feeds
 
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter_callback', via: [:get,:post]
 
-  get 'login', to: 'sessions#new'
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/twitter-timeline', to: 'twitter#index', as: :twitter_timeline

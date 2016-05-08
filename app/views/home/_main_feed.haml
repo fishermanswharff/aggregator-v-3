@@ -1,2 +1,10 @@
 .medium-9.columns
-  
+  - feeds.each do |f|
+    - f.entries.each do |article|
+      .entry-summary
+        = image_tag article.image
+        %h3= link_to article.title, article.entry_id
+        %p
+          %span Published at #{article.published.strftime("%I:%M%p %A, %b %e, %Y")}
+        %p
+          != article.summary
