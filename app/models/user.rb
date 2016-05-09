@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
   validates :email, :username,
     uniqueness: true
   validates :password, :password_confirmation,
-    presence: true, on: :create
+    presence: true,
+    on: :create
   validates :email,
     format: {
       with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,

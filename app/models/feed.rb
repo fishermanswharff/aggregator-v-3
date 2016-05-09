@@ -11,11 +11,13 @@ class Feed < ActiveRecord::Base
   has_many :feed_topics
   has_many :topics,
     through: :feed_topics
-
   has_many :followers,
     as: :followable
   has_many :users,
     through: :followers
+
+  scope :not_followed,
+    -> (user) { all.includes(:users).select { |f| !f.users.include?(user) } }
 
   def fetch_feed
     Feedjira::Feed.fetch_and_parse url
