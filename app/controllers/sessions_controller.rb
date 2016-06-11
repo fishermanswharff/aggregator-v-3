@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = 'Invalid email/password combination'
-      render 'home/index', status: :unauthorized
+      redirect_to root_path
     end
   end
 
