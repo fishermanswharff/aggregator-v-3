@@ -2,10 +2,6 @@ require 'rss'
 require 'open-uri'
 
 class Feed < ActiveRecord::Base
-  validates :url, presence: true
-  validates :url, format: { with: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\/\/\=]*)/, message: 'Must be a valid url.' }
-  validate :valid_feed?
-
   after_create :save_description
 
   has_many :feed_topics
@@ -16,8 +12,16 @@ class Feed < ActiveRecord::Base
   has_many :users,
     through: :followers
 
-  scope :not_followed,
-    -> (user) { all.includes(:users).select { |f| !f.users.include?(user) } }
+  validates :url,
+    presence: true
+  validates :url,
+    format: {
+      with: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\/\/\=]*)/,
+      message: 'Must be a valid url.'
+    }
+  validate :valid_feed?
+
+  scope :not_followed, -> (user) { all.includes(:users).select { |f| !f.users.include?(user) } }
 
   def fetch_feed
     Feedjira::Feed.fetch_and_parse url
