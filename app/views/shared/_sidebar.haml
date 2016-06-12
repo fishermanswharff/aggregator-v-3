@@ -9,13 +9,13 @@
       %h4 Feeds you are following:
       - if user.topics.any?
         %h5 Topics:
-        %ul
+        %ul.user-topics-list
           - topics.each do |topic|
             %li
               %span= link_to topic.name, 'javascript:void(0)'
       - if user.feeds.any?
         %h5 Feeds:
-        %ul
+        %ul.user-feeds-list
           - feeds.each do |feed|
             %li
               %span= link_to feed.name, 'javascript:void(0)'
@@ -29,12 +29,13 @@
     = render partial: 'shared/login'
 
   %h4 All Feeds
-  %ul
+  %ul.all-feeds-list
     - all_feeds.each do |f|
       - if current_user.present?
-        = form_for :user, url: following_user_path(current_user) do |form|
-          = form.hidden_field :followable_id, value: f.id
-          = form.hidden_field :followable_type, value: f.class.name
-          = form.submit f.name
+        %li
+          = form_for :user, url: following_user_path(current_user) do |form|
+            = form.hidden_field :followable_id, value: f.id
+            = form.hidden_field :followable_type, value: f.class.name
+            = form.submit f.name
       - else
         %li= link_to f.name, '#'

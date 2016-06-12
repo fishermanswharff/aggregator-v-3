@@ -16,6 +16,17 @@ h1,h2,h3,h4,h5,h6 {
 
 main {}
 
+.all-feeds-list {
+  li form input[type=submit] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
 .tweet {
   @include defaults();
   @include flexbox();

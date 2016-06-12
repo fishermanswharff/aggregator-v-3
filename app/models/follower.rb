@@ -9,6 +9,10 @@ class Follower < ActiveRecord::Base
     inclusion: {
       in: ALLOWED_TYPES
     }
+  validates :user,
+    uniqueness: {
+      scope: [:followable_type, :followable_id]
+    }
 
   scope :user_followers, -> (user_id) { where(followable_id: user_id, followable_type: 'User') }
 end

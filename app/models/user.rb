@@ -35,10 +35,6 @@ class User < ActiveRecord::Base
       with: /(?:[\w\d\S]+)@(?:[\w\d\-\.]){1,253}[\.](?:[\w]{2,4})/,
       message: 'Sorry, something is wrong with your email address.'
     }
-  validates :following,
-    uniqueness: {
-      scope: [:followable_type, :followable_id]
-    }
 
 
   def increment_sign_in_count
