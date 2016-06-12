@@ -12,7 +12,7 @@ puts "\n\n"
 puts 'seeding admin user…'
 
 jason = User.find_or_create_by(username: 'jasonwharff')
-jason.update_attributes(
+jason.update(
   first_name: 'Jason',
   last_name: 'Wharff',
   role: 'admin',
@@ -22,17 +22,19 @@ jason.update_attributes(
 )
 puts "Seeded user: #{jason.username}\n"
 puts "seeding dummy users…"
-99.times do |n|
-  password = 'password'
-  User.create!(
-    username: "#{n+1}-#{Faker::Internet.user_name}",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    role: 'regular',
-    email: "#{n+1}-#{Faker::Internet.email}",
-    password: password,
-    password_confirmation: password
-  )
+if Rails.env.development?
+  99.times do |n|
+    password = 'password'
+    User.create!(
+      username: "#{n+1}-#{Faker::Internet.user_name}",
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      role: 'regular',
+      email: "#{n+1}-#{Faker::Internet.email}",
+      password: password,
+      password_confirmation: password
+    )
+  end
 end
 puts 'Seeding AuthenticationProviders…'
 AuthenticationProvider.find_or_create_by!(name: 'twitter')
