@@ -6,7 +6,7 @@
       %span Following: #{user.followed.count}
       %span Followers: #{user.user_followers.count}
     .group
-      %h4 Following
+      %h4 Feeds you are following:
       - if user.topics.any?
         %h5 Topics:
         %ul
@@ -31,4 +31,10 @@
   %h4 All Feeds
   %ul
     - all_feeds.each do |f|
-      %li= link_to f.name, f.url
+      - if current_user.present?
+        = form_for :user, url: following_user_path(current_user) do |form|
+          = form.hidden_field :followable_id, value: f.id
+          = form.hidden_field :followable_type, value: f.class.name
+          = form.submit f.name
+      - else
+        %li= link_to f.name, '#'
