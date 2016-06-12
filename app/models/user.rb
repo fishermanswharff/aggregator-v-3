@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
       message: 'Sorry, something is wrong with your email address.'
     }
 
-
   def increment_sign_in_count
     self.sign_in_count += 1
     self.save!
@@ -84,6 +83,8 @@ class User < ActiveRecord::Base
       parsed.entries.slice!(3, parsed.entries.length - 3)
       parsed
     end
+  rescue Faraday::ConnectionFailed => e
+    return []
   end
 
   private

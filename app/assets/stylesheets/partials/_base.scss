@@ -18,13 +18,22 @@ main {}
 
 .all-feeds-list {
   li form input[type=submit] {
+    @include defaults();
+
     -webkit-appearance: none;
     appearance: none;
     background: none;
     border: none;
-    color: $primary-color;
-    text-decoration: underline;
+    color: $secondary-color;
+    text-decoration: none;
   }
+}
+
+.user-feeds-list,
+.user-topics-list,
+.all-feeds-list {
+  @include defaults();
+  list-style: none;
 }
 
 .tweet {
