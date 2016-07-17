@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy, :following, :followers]
+  before_action :set_user, only: [:show, :update, :destroy, :following, :followers, :change_password]
   before_filter :is_admin?, only: [:index]
 
   def index
@@ -37,13 +37,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def change_password
+    if @user.change_password(password: user_params[:new_password], password_confirmation: user_params[:new_password_confirmation])
+      respond_to do |format|
+        format.html { redirect_to user_path(@user), flash: { notice: "#{@user.username} successfully changed password" } }
+        format.json { render json: @user, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to user_path(@user), flash: { error: "#{@user.username} failed to change password: #{@user.errors.full_messages.join(', ')}" } }
+      end
+    end
+  end
+
   def destroy
     @user.destroy
     head :no_content
   end
 
   def followers
-    binding.pry
+    @user.followed
   end
 
   def following
@@ -62,6 +75,8 @@ class UsersController < ApplicationController
       :email,
       :password,
       :password_confirmation,
+      :new_password,
+      :new_password_confirmation,
       :followable_id,
       :followable_type
     )

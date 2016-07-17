@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  before_validation :set_token
   has_secure_password
   enum role: { admin: 0, regular: 1 }
+
+  before_validation :set_token
 
   has_many :authentications,
     class_name: 'UserAuthentication',
@@ -85,6 +86,14 @@ class User < ActiveRecord::Base
     end
   rescue Faraday::ConnectionFailed => e
     return []
+  end
+
+  def change_password(password:, password_confirmation:)
+    valid = password == password_confirmation
+    self.password = password if valid
+    self.update_reset_password_ts
+    self.save
+    valid
   end
 
   private

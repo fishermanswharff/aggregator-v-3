@@ -28,3 +28,14 @@
     = f.select :role, User.roles.keys.map{ |k| [k,k] }, {}, { selected: user.role, disabled: true }
   .form-group
     = f.submit 'Update User', class: 'button'
+
+= form_for user, url: change_password_user_path(user), method: 'post' do |f|
+  %h3 Change your password:
+  .form-group
+    = f.label 'new_password'
+    = f.password_field :new_password
+  .form-group
+    = f.label 'new_password_confirmation'
+    = f.password_field :new_password_confirmation
+  .form-group
+    = f.submit 'Change Password', class: 'button'

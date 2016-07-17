@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       get 'followers'
       post 'following'
+      post 'change_password'
     end
   end
 
