@@ -43,17 +43,12 @@ AuthenticationProvider.find_or_create_by!(name: 'linkedin')
 AuthenticationProvider.find_or_create_by!(name: 'facebook')
 puts "Done seeding auth providers: #{AuthenticationProvider.pluck(:name).join(', ')}"
 puts "\nSeeding feeds…"
-# cnn = Feed.find_or_create_by(url: 'http://rss.cnn.com/rss/cnn_topstories.rss', name: 'CNN')
-# atom = Feed.find_or_create_by(url: 'http://blog.atom.io/feed.xml', name: 'Atom by Github')
-# wash_post_politics = Feed.find_or_create_by(url: 'http://feeds.washingtonpost.com/rss/politics', name: 'Washington Post Politics')
-# mash = Feed.find_or_create_by(url: 'http://feeds.mashable.com/Mashable', name: 'Mashable')
 CSV.foreach('db/seed_data/feeds.csv', headers: true, col_sep: ',', skip_blanks: true) do |row|
   unless Feed.exists?(url: row.field('url'))
     feed = Feed.create(url: row.field('url'), name: row.field('name'))
     puts "seeded Feed with url: #{feed.url}"
   end
 end
-
 puts "Seeded #{Feed.count} feeds…"
 puts 'Seeding topics…'
 politics = Topic.find_or_create_by(name: 'Politics')
@@ -61,8 +56,4 @@ tech = Topic.find_or_create_by(name: 'Tech')
 news = Topic.find_or_create_by(name: 'News')
 puts "Seeded #{Topic.count} topics"
 puts 'adding some feeds to topics…'
-# cnn.topics << news
-# atom.topics << tech
-# wash_post_politics.topics << politics
-# mash.topics << tech
 puts 'All done.'
