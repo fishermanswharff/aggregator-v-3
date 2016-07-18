@@ -11,13 +11,15 @@
         %ul.user-topics-list
           - user_topics.each do |topic|
             %li
-              %span= link_to topic.name, 'javascript:void(0)'
+              %span= topic.name
+              %span= link_to 'unfollow', 'javascript:void(0)'
       - if user_feeds.any?
         %h5 Feeds you follow:
         %ul.user-feeds-list
           - user_feeds.each do |feed|
             %li
-              %span= link_to feed.name, 'javascript:void(0)'
+              %span= feed.name
+              %span= link_to 'unfollow', 'javascript:void(0)'
     .group
       - unless user.authenticated_with('twitter')
         = link_to 'Login with Twitter', 'javascript:void(0)', id: 'oauth_twitter', class: 'button'

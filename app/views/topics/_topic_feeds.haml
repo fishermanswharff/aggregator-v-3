@@ -1,1 +1,4 @@
 %h1= topic.name
+%ul.topic-feeds
+  - topic.feeds.each do |feed|
+    %li= feed.name
