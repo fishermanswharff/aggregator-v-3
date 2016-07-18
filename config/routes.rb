@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :feeds
+  resources :topics
 
   match '/users/auth/:provider' => 'users/omniauth_callbacks#passthru', via: [:get,:post]
   match '/users/auth/twitter/callback' => 'users/omniauth_callbacks#twitter_callback', via: [:get,:post]

@@ -1,5 +1,5 @@
 .row
-  = render partial: 'shared/sidebar', locals: { user: current_user, topics: current_user.topics, feeds: current_user.feeds, all_feeds: all_feeds }
+  = render partial: 'shared/sidebar', locals: { user: current_user, user_topics: current_user.topics, user_feeds: current_user.feeds, all_feeds: all_feeds, topics: topics }
   .medium-9.columns
     - if current_user && current_user.authenticated_with('twitter')
       = render partial: 'twitter/index', locals: { tweets: current_user.twitter_feed, user: current_user }

@@ -31,6 +31,7 @@ main {}
 
 .user-feeds-list,
 .user-topics-list,
+.all-topics,
 .all-feeds-list {
   @include defaults();
   list-style: none;

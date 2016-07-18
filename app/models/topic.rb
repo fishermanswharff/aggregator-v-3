@@ -4,4 +4,5 @@ class Topic < ActiveRecord::Base
   has_many :followers, as: :followable
 
   validates :name, presence: true
+  validates :name, uniqueness: true
 end

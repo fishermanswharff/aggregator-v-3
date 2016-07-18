@@ -6,17 +6,16 @@
       %span Following: #{user.followed.count}
       %span Followers: #{user.user_followers.count}
     .group
-      %h4 Feeds you are following:
-      - if user.topics.any?
-        %h5 Topics:
+      - if user_topics.any?
+        %h5 Topics you follow:
         %ul.user-topics-list
-          - topics.each do |topic|
+          - user_topics.each do |topic|
             %li
               %span= link_to topic.name, 'javascript:void(0)'
-      - if user.feeds.any?
-        %h5 Feeds:
+      - if user_feeds.any?
+        %h5 Feeds you follow:
         %ul.user-feeds-list
-          - feeds.each do |feed|
+          - user_feeds.each do |feed|
             %li
               %span= link_to feed.name, 'javascript:void(0)'
     .group
@@ -39,3 +38,8 @@
             = form.submit f.name
       - else
         %li= link_to f.name, '#'
+
+  %h4 All Topics
+  %ul.all-topics
+    - topics.each do |t|
+      %li= link_to t.name, topic_path(t)

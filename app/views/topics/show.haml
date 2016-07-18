@@ -1,7 +1,7 @@
 .row
   - if current_user.present?
     = render partial: 'shared/sidebar', locals: { user: current_user, user_topics: current_user.topics, user_feeds: current_user.feeds, all_feeds: all_feeds, topics: topics }
-    = render partial: 'home/main_feed', locals: { user: current_user, topics: topics, feeds: current_user.top_feeds }
+    = render partial: 'topics/topic_feeds', locals: { user: current_user, topic: topic, topics: topics, feeds: all_feeds }
   - else
     = render partial: 'shared/sidebar', locals: { user: nil, topics: [], feeds: [], all_feeds: all_feeds }
     .medium-9.columns
