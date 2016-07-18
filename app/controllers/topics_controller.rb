@@ -7,8 +7,7 @@ class TopicsController < ApplicationController
       topic: @topic,
       current_user: @decorated_user,
       all_feeds: Feed.all,
-      topics: @topics,
-
+      topics: @topics
     }
   end
 

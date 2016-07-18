@@ -47,7 +47,7 @@ puts "\nSeeding feeds…"
 CSV.foreach('db/seed_data/feeds.csv', headers: true, col_sep: ',', skip_blanks: true) do |row|
   unless Feed.exists?(url: row.field('url'))
     feed = Feed.create(url: row.field('url'), name: row.field('name'))
-    puts "seeded Feed with url: #{feed.url}"
+    puts "seeded Feed with url: #{feed.url}" if feed.save
   end
 end
 
@@ -61,4 +61,12 @@ end
 
 puts "Seeded #{Topic.count} topics"
 puts 'adding some feeds to topics…'
+
+CSV.foreach('db/seed_data/topic_feeds.csv', headers: true, col_sep: ',', skip_blanks: true) do |row|
+  f = Feed.find_by(name: row.field('feed_name'))
+  t = Topic.find_by(name: row.field('topic_name'))
+  FeedTopic.create(feed: f, topic: t)
+  puts "Feed #{f.name} belongs to topic #{t.name}"
+end
+
 puts 'All done.'
