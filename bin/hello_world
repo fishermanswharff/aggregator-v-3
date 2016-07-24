@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require 'thor'
+
+class HelloWorld < Thor
+  desc 'say', 'greets the motherfucker'
+  def say_hello
+    puts 'hello motherfucker'
+  end
+
+  desc 'echo', 'echos the motherfucker'
+  method_option :value,
+    aliases: '-v',
+    type: :string,
+    desc: 'value to echo',
+    required: true,
+    default: 'something nice'
+  def echo
+    puts options[:value]
+  end
+end
+
+HelloWorld.start(ARGV)
