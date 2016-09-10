@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       user.increment_sign_in_count
       user.set_current_sign_in
       session[:current_user_id] = user.token
+      Rails.logger.info "————————————————————————— session[:current_user_id]: #{session[:current_user_id]} —————————————————————————"
       redirect_to root_path
     else
       flash[:alert] = 'Invalid email/password combination'
