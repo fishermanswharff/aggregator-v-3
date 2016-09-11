@@ -7,7 +7,6 @@ class Crawler
     page_uri = URI(url)
     robots_txt = `curl #{url.gsub(/\/$/, '')}/robots.txt`
 
-    binding.pry
     link_attributes = page.xpath('//head').flat_map(&:children).select { |child| child.name == 'link' }.map(&:attributes)
     rss_links = link_attributes.select { |link| link['type']&.value == 'application/rss+xml' }
     begin
