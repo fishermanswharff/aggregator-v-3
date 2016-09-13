@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
-gem 'rails', '4.2.7'
-gem 'rails-api'
-gem 'pg', '~> 0.15'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3'
-gem 'coffee-rails', '~> 4.1'
-gem 'haml-rails'
-gem 'jquery-rails'
+gem 'rails', '4.2.7.1'                                                # we're riding on Rails
+gem 'rails-api', require: 'rails-api/action_controller/api'           # enable the api version of rails
+gem 'pg', '~> 0.15'                                                   # postgresql adapter
+gem 'sass-rails', '~> 5.0'                                            # sass compiles to css
+gem 'uglifier', '>= 1.3'                                              # compresses js
+gem 'haml-rails'                                                      # we use haml views
+gem 'jquery-rails'                                                    # jquery for rails
 gem 'turbolinks'
 gem 'sdoc', '~> 0.4', group: :doc
 gem 'bcrypt', '~> 3.1'
@@ -25,6 +24,7 @@ gem 'linkedin'
 gem 'instagram'
 gem 'sidekiq'
 gem 'aws-sdk'
+gem 'activerecord-session_store', '~> 1.0'                            # a session store backed by an Active Record class
 
 group :development, :test do
   gem 'byebug'
