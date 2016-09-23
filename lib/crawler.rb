@@ -20,8 +20,7 @@ class Crawler
           end
         end
       end
-    rescue ActiveRecord::RecordNotUnique => e
-      Rails.logger.debug "————————— ActiveRecord::RecordNotUnique #{e}—————————"
+    rescue => e
       # do something?
     end
   end
