@@ -12,7 +12,7 @@ gem 'rack-cors' # Cross Origin resource sharing
 gem 'rack-ssl-enforcer' # A simple Rack middleware to enforce ssl connections
 gem 'active_model_serializers', '~> 0.10' # Serialize your models into json
 gem 'redis' # Redis in rails
-gem 'redis-rails'
+gem 'redis-rails' # redis-rails provides a full set of stores (Cache, Session, HTTP Cache) for Ruby on Rails
 gem 'rack-cache' # HTTP caching
 gem 'nokogiri' # Parse/Read/Build XML/HTML
 gem 'feedjira' # Parse and Read Rss & Atom Feeds
