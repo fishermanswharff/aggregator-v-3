@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -20,19 +19,17 @@ ActiveRecord::Schema.define(version: 20160913032211) do
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_authentication_providers_on_name", using: :btree
   end
-
-  add_index "authentication_providers", ["name"], name: "index_authentication_providers_on_name", using: :btree
 
   create_table "feed_topics", force: :cascade do |t|
     t.integer  "feed_id"
     t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["feed_id"], name: "index_feed_topics_on_feed_id", using: :btree
+    t.index ["topic_id"], name: "index_feed_topics_on_topic_id", using: :btree
   end
-
-  add_index "feed_topics", ["feed_id"], name: "index_feed_topics_on_feed_id", using: :btree
-  add_index "feed_topics", ["topic_id"], name: "index_feed_topics_on_topic_id", using: :btree
 
   create_table "feeds", force: :cascade do |t|
     t.text     "name",        default: "", null: false
@@ -40,11 +37,10 @@ ActiveRecord::Schema.define(version: 20160913032211) do
     t.text     "description", default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_feeds_on_name", using: :btree
+    t.index ["url", "name"], name: "index_feeds_on_url_and_name", unique: true, using: :btree
+    t.index ["url"], name: "index_feeds_on_url", using: :btree
   end
-
-  add_index "feeds", ["name"], name: "index_feeds_on_name", using: :btree
-  add_index "feeds", ["url", "name"], name: "index_feeds_on_url_and_name", unique: true, using: :btree
-  add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
 
   create_table "followers", force: :cascade do |t|
     t.integer  "user_id"
@@ -52,28 +48,25 @@ ActiveRecord::Schema.define(version: 20160913032211) do
     t.string   "followable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["followable_type", "followable_id"], name: "index_followers_on_followable_type_and_followable_id", using: :btree
+    t.index ["user_id", "followable_id", "followable_type"], name: "index_followers_on_user_followable_id_followable_type", unique: true, using: :btree
   end
-
-  add_index "followers", ["followable_type", "followable_id"], name: "index_followers_on_followable_type_and_followable_id", using: :btree
-  add_index "followers", ["user_id", "followable_id", "followable_type"], name: "index_followers_on_user_followable_id_followable_type", unique: true, using: :btree
 
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+    t.index ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
   end
-
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name",       default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_topics_on_name", using: :btree
   end
-
-  add_index "topics", ["name"], name: "index_topics_on_name", using: :btree
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -84,11 +77,10 @@ ActiveRecord::Schema.define(version: 20160913032211) do
     t.jsonb    "params",                     default: {}, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
+    t.index ["params"], name: "index_user_authentications_on_params", using: :gin
+    t.index ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
   end
-
-  add_index "user_authentications", ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id", using: :btree
-  add_index "user_authentications", ["params"], name: "index_user_authentications_on_params", using: :gin
-  add_index "user_authentications", ["user_id"], name: "index_user_authentications_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -106,14 +98,13 @@ ActiveRecord::Schema.define(version: 20160913032211) do
     t.datetime "last_sign_in_at"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["first_name"], name: "index_users_on_first_name", using: :btree
+    t.index ["last_name"], name: "index_users_on_last_name", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["token"], name: "index_users_on_token", using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["first_name"], name: "index_users_on_first_name", using: :btree
-  add_index "users", ["last_name"], name: "index_users_on_last_name", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["token"], name: "index_users_on_token", using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "feed_topics", "feeds"
   add_foreign_key "feed_topics", "topics"
