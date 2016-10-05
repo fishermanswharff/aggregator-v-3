@@ -39,7 +39,6 @@ class Spider
         end
       end
     rescue => e
-      # do something?
     end
   end
 
@@ -59,7 +58,6 @@ class Spider
       end
     end
   rescue => e
-    binding.pry
   ensure
     return saved_feeds
   end

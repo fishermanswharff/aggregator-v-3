@@ -8,6 +8,7 @@ RSpec.describe Spider do
 
   before :each do
     allow(RSS::Parser).to receive(:parse).with(anything()).and_return(FactoryGirl.build(:rss_parsed_feed))
+    allow(Feedjira::Feed).to receive(:fetch_and_parse).with(anything()).and_return(FactoryGirl.build(:feedjira_parsed_feed))
   end
 
   describe 'spider' do

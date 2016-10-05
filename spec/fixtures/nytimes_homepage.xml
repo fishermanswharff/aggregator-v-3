@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; Home Page</title>
+    <link>http://www.nytimes.com/pages/index.html?partner=rss&amp;emc=rss</link>
+    <atom:link rel="self" type="application/rss+xml" href="http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"/>
+    <description/>
+    <language>en-us</language>
+    <copyright>Copyright 2016  The New York Times Company</copyright>
+    <lastBuildDate>Wed, 05 Oct 2016 12:33:06 GMT </lastBuildDate>
+    <image>
+      <title>NYT &gt; Home Page</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>http://www.nytimes.com/pages/index.html?partner=rss&amp;emc=rss</link>
+    </image>
+    <item>
+      <title>Tim Kaine and Mike Pence Clash Sharply Over Their Running Mates</title>
+      <link>http://www.nytimes.com/2016/10/05/us/politics/vice-presidential-debate.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/us/politics/vice-presidential-debate.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/us/politics/vice-presidential-debate.html?partner=rss&amp;emc=rss"/>
+      <description>No. 2 candidates always use their debates to promote and defend the top of the ticket, but Mr. Pence&#x2019;s role came after a week of outbursts from Donald Trump.</description>
+      <dc:creator>JONATHAN MARTIN and PATRICK HEALY</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 02:45:19 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pence, Mike</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kaine, Timothy M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Debates (Political)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Vice Presidents and Vice Presidency (US)</category>
+    </item>
+    <item>
+      <title>Debate Takeaways: Tim Kaine Presses Mike Pence on Russia, but Not Gay Rights</title>
+      <link>http://www.nytimes.com/2016/10/06/us/politics/vp-debate-highlights.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/06/us/politics/vp-debate-highlights.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/06/us/politics/vp-debate-highlights.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/04/us/04VPDEBATE-diptych/04VPDEBATE-diptych-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Tim Kaine, Democrat of Virginia, left, and Gov. Mike Pence of Indiana, his Republican rival, during the vice-presidential debate on Tuesday in Farmville, Va.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>The two No. 2s in the 2016 race engaged in a snippy, but conventional, tit-for-tat exchange, with Mr. Pence largely sidestepping Mr. Kaine&#x2019;s attacks on Donald Trump.</description>
+      <dc:creator>ALEXANDER BURNS</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 06:29:27 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kaine, Timothy M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pence, Mike</category>
+    </item>
+    <item>
+      <title>Mike Pence, Tim Kaine, Toronto Blue Jays: Your Wednesday Briefing</title>
+      <link>http://www.nytimes.com/2016/10/05/briefing/mike-pence-tim-kaine-toronto-blue-jays.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/briefing/mike-pence-tim-kaine-toronto-blue-jays.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/briefing/mike-pence-tim-kaine-toronto-blue-jays.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/06/nytnow/05nytnow-debate3/05nytnow-debate3-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Tim Kaine, left, and Gov. Mike Pence threw each other on the defensive at the vice-presidential debate in Farmville, Va., on Tuesday.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>Here&#x2019;s what you need to know to start your day.</description>
+      <dc:creator>SEAN ALFANO</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 09:49:58 GMT</pubDate>
+    </item>
+    <item>
+      <title>New York Today: New York Today: A Moment for the Mets</title>
+      <link>http://www.nytimes.com/2016/10/05/nyregion/new-york-today-mets-san-francisco-giants-baseball-world-series.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/nyregion/new-york-today-mets-san-francisco-giants-baseball-world-series.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/nyregion/new-york-today-mets-san-francisco-giants-baseball-world-series.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/nyregion/05NYTODAY/05NYTODAY-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Eyeing a chance to play deeper into October.</media:description>
+      <media:credit>Alex Goodlett for The New York Times</media:credit>
+      <description>Wednesday: Dreaming of the World Series, pizza for a good cause, and our city&#x2019;s Hispanic heritage.</description>
+      <dc:creator>JONATHAN WOLFE</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 10:19:38 GMT</pubDate>
+    </item>
+    <item>
+      <title>California Today: California Today: The Steep Costs of Fighting Wildfires</title>
+      <link>http://www.nytimes.com/2016/10/05/us/california-today-wildfires-budgets.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/us/california-today-wildfires-budgets.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/us/california-today-wildfires-budgets.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/09/13/us/13ct-1/13ct-1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The cost so far of battling the Soberanes wildfire near Big Sur, seen in August, has been estimated at more than $230 million.</media:description>
+      <media:credit>David Royal/The Monterey County Herald, via Associated Press</media:credit>
+      <description>Wednesday: Budgeting to suppress California&#x2019;s fires, Google unveils its own smartphone, and parting thoughts from the longtime Los Angeles Downtown News publisher.</description>
+      <dc:creator>MIKE McPHATE</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 12:05:49 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_keyword">California Today</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">California</category>
+    </item>
+    <item>
+      <title>News Analysis: Mike Pence&#x2019;s Defense Strategy: Dodge and Deflect Donald Trump&#x2019;s Words</title>
+      <link>http://www.nytimes.com/2016/10/05/us/politics/mike-pence-donald-trump-tim-kaine.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/us/politics/mike-pence-donald-trump-tim-kaine.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/us/politics/mike-pence-donald-trump-tim-kaine.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/us/05ASSESS/05ASSESS-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Tim Kaine and Gov. Mike Pence, with the moderator Elaine Quijano, at the start of the vice-presidential debate on Tuesday.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>At his debate with Senator Tim Kaine, Mr. Pence seemed to decide that all of the fires that Mr. Trump has set in the past year could not be doused in a single night.</description>
+      <dc:creator>MICHAEL BARBARO and AMY CHOZICK</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 04:04:23 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Vice Presidents and Vice Presidency (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kaine, Timothy M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pence, Mike</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Debates (Political)</category>
+    </item>
+    <item>
+      <title>Who Won the Debate? Commentators Give Edge to Mike Pence</title>
+      <link>http://www.nytimes.com/2016/10/06/us/politics/who-won-debate.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/06/us/politics/who-won-debate.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/06/us/politics/who-won-debate.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/us/05whowon1/05whowon1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Gov. Mike Pence, Donald J. Trump&#x2019;s running mate, during the vice-presidential debate at Longwood University in Farmville, Va., on Tuesday. Critics praised his temperament in response to questions from his opponent, Senator Tim Kaine.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>Critics noted Mr. Pence&#x2019;s steady demeanor in response to Tim Kaine&#x2019;s barrage of questions and provocations.</description>
+      <dc:creator>ALAN RAPPEPORT</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 05:40:16 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bush, Jeb</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kaine, Timothy M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+    </item>
+    <item>
+      <title>Pence and Kaine in Vice-Presidential Debate</title>
+      <link>http://www.nytimes.com/video/us/politics/100000004687131/pence-and-kaine-in-vice-presidential-debate.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/video/us/politics/100000004687131/pence-and-kaine-in-vice-presidential-debate.html</guid>
+      <description>Gov. Mike Pence of Indiana and Senator Tim Kaine of Virginia scrambled to defend the policies of their running mates in their only debate at Longwood University in Farmville, Va. The Times reporter Michael D. Shear weighs in on their defensive maneuvers.</description>
+      <dc:creator/>
+      <pubDate>Wed, 05 Oct 2016 02:38:36 GMT</pubDate>
+    </item>
+    <item>
+      <title>Vice-Presidential Debate: What You Missed</title>
+      <link>http://www.nytimes.com/2016/10/04/us/politics/vice-presidential-debate.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/04/us/politics/vice-presidential-debate.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/04/us/politics/vice-presidential-debate.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/04/multimedia/vp-debate-doug-301/vp-debate-doug-301-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Tim Kaine of Virginia and Gov. Mike Pence of Indiana at the vice-presidential debate at Longwood University in Farmville, Va.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>Senator Tim Kaine of Virginia and Gov. Mike Pence of Indiana faced off at Longwood University in Farmville, Va., in their only debate.</description>
+      <dc:creator>NICHOLAS CONFESSORE and MATT FLEGENHEIMER</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 06:03:02 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kaine, Timothy M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Pence, Mike</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Clinton, Hillary Rodham</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Democratic Party</category>
+    </item>
+    <item>
+      <title>Transcript of the 2016 Debate Between the Running Mates</title>
+      <link>http://www.nytimes.com/2016/10/06/us/politics/vice-president-transcript.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/06/us/politics/vice-president-transcript.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/06/us/politics/vice-president-transcript.html?partner=rss&amp;emc=rss"/>
+      <description>Following is a transcript of the vice-presidential debate on Tuesday, as transcribed by the Federal News Service.</description>
+      <dc:creator/>
+      <pubDate>Wed, 05 Oct 2016 05:10:41 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+    </item>
+    <item>
+      <title>Donald Trump as Role Model? G.O.P. Senator &#x2018;Absolutely&#x2019; Has Second Thoughts</title>
+      <link>http://www.nytimes.com/2016/10/05/us/politics/senate-kelly-ayotte-donald-trump.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/us/politics/senate-kelly-ayotte-donald-trump.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/us/politics/senate-kelly-ayotte-donald-trump.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/us/05ayotte-web/05ayotte-web-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Senator Kelly Ayotte, Republican of New Hampshire, campaigned in Hudson, N.H., on Tuesday.</media:description>
+      <media:credit>Jim Cole/Associated Press</media:credit>
+      <description>Senator Kelly Ayotte of New Hampshire found herself apologizing for praising her party&#x2019;s presidential candidate as a good role model.</description>
+      <dc:creator>JENNIFER STEINHAUER</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 00:31:01 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Senate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Republican Party</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">New Hampshire</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+    </item>
+    <item>
+      <title/>
+      <link>http://www.nytimes.com/newsletters/morning-briefing?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/newsletters/morning-briefing</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/newsletters/morning-briefing?partner=rss&amp;emc=rss"/>
+      <description>&lt;a href="http://www.nytimes.com/newsletters/morning-briefing"&gt;&lt;strong&gt;The Morning Briefing&lt;/strong&gt;&lt;/a&gt; Delivered to your inbox Monday through Friday.</description>
+      <dc:creator/>
+      <pubDate>Wed, 28 Sep 2016 10:34:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>3 Makers of &#x2018;World&#x2019;s Smallest Machines&#x2019; Awarded Nobel Prize in Chemistry</title>
+      <link>http://www.nytimes.com/2016/10/06/science/nobel-prize-chemistry.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/06/science/nobel-prize-chemistry.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/06/science/nobel-prize-chemistry.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/06/world/06nobel-web2/06nobel-web2-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Winners of the 2016 Nobel Prize in Chemistry, Jean-Pierre Sauvage, J Fraser Stoddart and Bernard L Feringa, are displayed at the Royal Swedish Academy of Sciences in Stockholm on Wednesday as Sara Snogerup Linse, who heads the panel that selects nominees, explains a principle with the aid of a bagel.</media:description>
+      <media:credit>Henrik Montgomery/TT News Agency, via Reuters</media:credit>
+      <description>Jean-Pierre Sauvage, J. Fraser Stoddart and Bernard L. Feringa won for &#x201C;molecular machines&#x201D; that can be used for the development of new materials, sensors and energy storage systems.</description>
+      <dc:creator>KENNETH CHANG and SEWELL CHAN</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 11:05:14 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Nobel Prizes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Chemistry</category>
+    </item>
+    <item>
+      <title>Hurricane Matthew Pummels Haiti With Fierce Winds and Rain</title>
+      <link>http://www.nytimes.com/2016/10/05/world/americas/hurricane-matthew-caribbean.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/americas/hurricane-matthew-caribbean.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/americas/hurricane-matthew-caribbean.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/world/americas/05STORM-REFER/05STORM-REFER-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Streets were flooded in Port-au-Prince after Hurricane Matthew crashed ashore early Tuesday with 145 m.p.h. winds.</media:description>
+      <media:credit>Hector Retamal/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>The top United Nations official in the country described the storm as &#x201C;the largest humanitarian event&#x201D; in the nation of 11 million since a devastating earthquake six years ago.</description>
+      <dc:creator>AZAM AHMED</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 22:31:57 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hurricanes and Tropical Storms</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Haiti</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Caribbean Area</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">vis-multimedia</category>
+    </item>
+    <item>
+      <title>Hurricane Matthew Hits Haiti</title>
+      <link>http://www.nytimes.com/video/world/americas/100000004689585/hurricane-matthew-hits-haiti.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/video/world/americas/100000004689585/hurricane-matthew-hits-haiti.html</guid>
+      <description>Haiti took precautions as the Category 4 storm made landfall on Tuesday. The storm is expected to cause damaging winds, flash floods and landslides.</description>
+      <dc:creator/>
+      <pubDate>Tue, 04 Oct 2016 15:47:47 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/des">Hurricanes and Tropical Storms</category>
+      <category domain="http://www.nytimes.com/namespaces/nyt_geo">Haiti</category>
+    </item>
+    <item>
+      <title>Xi Jinping May Delay Picking China&#x2019;s Next Leader, Stoking Speculation</title>
+      <link>http://www.nytimes.com/2016/10/05/world/asia/china-president-xi-jinping-successor.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/asia/china-president-xi-jinping-successor.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/asia/china-president-xi-jinping-successor.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/03/world/04CHINA-XI-web1/04CHINA-XI-web1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>President Xi Jinping of China during a ceremony observing Martyrs&#x2019; Day, a holiday that memorializes Chinese who died in battle against foreign powers, at Tiananmen Square in Beijing last week.</media:description>
+      <media:credit>Mark Schiefelbein/Associated Press</media:credit>
+      <description>The apparent plan by the Chinese president has unsettled the party elite and created uncertainty over whether Mr. Xi will try to stay in power beyond the usual two terms.</description>
+      <dc:creator>CHRIS BUCKLEY</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 23:59:10 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Xi Jinping</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Communist Party of China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Appointments and Executive Changes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Li Keqiang</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Politburo Standing Committee of the Communist Party of China</category>
+    </item>
+    <item>
+      <title>Your Daily Mini Crossword</title>
+      <link>http://www.nytimes.com/crosswords/game/mini?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/crosswords/game/mini</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/crosswords/game/mini?partner=rss&amp;emc=rss"/>
+      <description>Solve a bite-size crossword in just a few minutes.</description>
+      <dc:creator/>
+      <pubDate>Thu, 25 Feb 2016 07:18:20 GMT</pubDate>
+    </item>
+    <item>
+      <title>News: What We&#x2019;re Reading</title>
+      <link>http://news.blogs.nytimes.com/2016/10/04/what-were-reading-194/?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://news.blogs.nytimes.com/2016/10/04/what-were-reading-194/</guid>
+      <atom:link rel="standout" href="http://news.blogs.nytimes.com/2016/10/04/what-were-reading-194/?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/04/nytnow/04wwr1/04wwr1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description/>
+      <media:credit>Dan Steinberg/Invision, via Associated Press</media:credit>
+      <description>Get recommendations from New York Times reporters and editors, highlighting great stories from around the web. Today, great reads from Tara Parker-Pope, Jazmine Hughes and others.</description>
+      <dc:creator>THE NEW YORK TIMES</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 20:54:46 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/">Birth of a Nation (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/">Cobalt</category>
+      <category domain="http://www.nytimes.com/namespaces/">Comic Books and Strips</category>
+      <category domain="http://www.nytimes.com/namespaces/">Darlin, Damon</category>
+      <category domain="http://www.nytimes.com/namespaces/">Hughes, Jazmine</category>
+      <category domain="http://www.nytimes.com/namespaces/">Japan</category>
+      <category domain="http://www.nytimes.com/namespaces/">Japan Earthquake and Tsunami (2011)</category>
+      <category domain="http://www.nytimes.com/namespaces/">Lewy Body Disease</category>
+      <category domain="http://www.nytimes.com/namespaces/">Marvel Entertainment</category>
+      <category domain="http://www.nytimes.com/namespaces/">McKenna, Kevin</category>
+      <category domain="http://www.nytimes.com/namespaces/">Netflix Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/">Neurology (Journal)</category>
+      <category domain="http://www.nytimes.com/namespaces/">New Yorker</category>
+      <category domain="http://www.nytimes.com/namespaces/">Parker, Nate</category>
+      <category domain="http://www.nytimes.com/namespaces/">Parker-Pope, Tara</category>
+      <category domain="http://www.nytimes.com/namespaces/">Saltzstein, Dan</category>
+      <category domain="http://www.nytimes.com/namespaces/">This American Life (Radio Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/">Washington Post</category>
+      <category domain="http://www.nytimes.com/namespaces/">Williams, Robin</category>
+    </item>
+    <item>
+      <title>Sketch Guy: One of the Smartest Money Strategies Is Asking When You Don&#x2019;t Know</title>
+      <link>http://www.nytimes.com/2016/10/05/your-money/one-of-the-smartest-money-strategies-is-asking-when-you-dont-know.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/your-money/one-of-the-smartest-money-strategies-is-asking-when-you-dont-know.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/your-money/one-of-the-smartest-money-strategies-is-asking-when-you-dont-know.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/03/business/100316bucks-carl-sketch/100316bucks-carl-sketch-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description/>
+      <media:credit>Carl Richards</media:credit>
+      <description>Humility, in personal finance, is knowing how to ask for help when you don&#x2019;t know something, even when you think you should know it.</description>
+      <dc:creator>CARL RICHARDS</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 15:36:25 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Personal Finances</category>
+    </item>
+    <item>
+      <title>A French Underground Railroad, Moving African Migrants</title>
+      <link>http://www.nytimes.com/2016/10/05/world/europe/france-italy-migrants-smuggling.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/europe/france-italy-migrants-smuggling.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/europe/france-italy-migrants-smuggling.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/02/world/europe/02smuggler1/02smuggler1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Migrants crossed a road near a Red Cross camp outside Ventimiglia, the last Italian city before the French border. The authorities have put about 800 migrant men in the camp.</media:description>
+      <media:credit>Pierre Terdjman for The New York Times</media:credit>
+      <description>Near the border with Italy, a farmer and his network of &#x201C;citizen smugglers&#x201D; have helped hundreds cross the border, in a personal response to his nation&#x2019;s muddled handling of the crisis.</description>
+      <dc:creator>ADAM NOSSITER</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 03:52:14 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Refugees and Displaced Persons</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Illegal Immigration</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Smuggling</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Italy</category>
+    </item>
+    <item>
+      <title>The Real Message in Ang Lee&#x2019;s Latest? &#x2018;It&#x2019;s Just Good to Look At&#x2019;</title>
+      <link>http://www.nytimes.com/2016/10/09/movies/ang-lee-interview-billy-lynns-long-halftime-walk.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/09/movies/ang-lee-interview-billy-lynns-long-halftime-walk.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/09/movies/ang-lee-interview-billy-lynns-long-halftime-walk.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/09/arts/109BILLYLYNN1/109BILLYLYNN1-moth-v2.jpg" medium="image" height="151" width="151"/>
+      <media:description>The director Ang Lee wearing the glasses that will be needed to view his new movie, &#x201C;Billy Lynn&#x2019;s Long Halftime Walk.&#x201D; It was filmed in 3-D, and it will be shown &#x2014; in theaters that can accommodate it &#x2014; at 4K resolution and a rate of 120 frames per second, surpassing any previous major movie release.</media:description>
+      <media:credit>Emily Andrews for The New York Times</media:credit>
+      <description>Mr. Lee is gambling on an advanced filmmaking technique in &#x201C;Billy Lynn&#x2019;s Long Halftime Walk&#x201D; that audiences have rejected before.</description>
+      <dc:creator>DAVE ITZKOFF</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 10:00:23 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">3-D Devices and Effects</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Lee, Ang</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Billy Lynn's Long Halftime Walk (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Rothman, Thomas E (1954- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fountain, Ben</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Squyres, Tim</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Life of Pi (Movie)</category>
+    </item>
+    <item>
+      <title>U.S. Election Cycle Offers Kremlin a Window of Opportunity in Syria</title>
+      <link>http://www.nytimes.com/2016/10/05/world/middleeast/syria-russia-us-election.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/middleeast/syria-russia-us-election.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/middleeast/syria-russia-us-election.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/world/05military-web/05military-web-moth-v3.jpg" medium="image" height="151" width="151"/>
+      <media:description>The aftermath of Syrian government and Russian airstrikes in a rebel-held neighborhood of Aleppo in July.</media:description>
+      <media:credit>Muhammed Juneyd/Anadolu Agency, via Getty Images</media:credit>
+      <description>President Vladimir V. Putin, analysts say, is advancing goals in the Syrian conflict while President Obama is on the way out and his replacement is undetermined.</description>
+      <dc:creator>MICHAEL R. GORDON and NEIL MacFARQUHAR</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 00:42:11 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">State Department</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Obama, Barack</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Putin, Vladimir V</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Syria</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Clinton, Hillary Rodham</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+    </item>
+    <item>
+      <title>Ethics Panel Investigating de Blasio&#x2019;s Nonprofit Is Said to Issue Broad Subpoena</title>
+      <link>http://www.nytimes.com/2016/10/05/nyregion/ethics-panel-investigating-de-blasios-nonprofit-is-said-to-issue-broad-subpoena.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/nyregion/ethics-panel-investigating-de-blasios-nonprofit-is-said-to-issue-broad-subpoena.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/nyregion/ethics-panel-investigating-de-blasios-nonprofit-is-said-to-issue-broad-subpoena.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/nyregion/05MAYOR/05MAYOR-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Mayor Bill de Blasio&#x2019;s political nonprofit, the Campaign for One New York, shut down this year. It is being investigated by the State Joint Commission on Public Ethics.</media:description>
+      <media:credit>Sam Hodgson for The New York Times</media:credit>
+      <description>New requests for communications and other items by a state ethics panel came just days after the Campaign for One New York lost its case in court.</description>
+      <dc:creator>WILLIAM K. RASHBAUM</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 07:30:23 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Elections, Mayors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Campaign Finance</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">de Blasio, Bill</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Campaign for One New York</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Subpoenas</category>
+    </item>
+    <item>
+      <title>Blue Jays 5, Orioles 2: Edwin Encarnacion&#x2019;s Homer Lifts Blue Jays Past Orioles in A.L. Wild-Card Game</title>
+      <link>http://www.nytimes.com/2016/10/05/sports/baseball/toronto-blue-jays-baltimore-orioles-al-wild-card.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/sports/baseball/toronto-blue-jays-baltimore-orioles-al-wild-card.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/sports/baseball/toronto-blue-jays-baltimore-orioles-al-wild-card.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/sports/05altALWILDCARD1/05altALWILDCARD1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>The Blue Jays&#x2019; Edwin Encarnacion after winning the game with a three-run homer. He sent a first-pitch fastball from Ubaldo Jimenez into the second deck at Rogers Centre in Toronto.</media:description>
+      <media:credit>Tom Szczerbowski/Getty Images</media:credit>
+      <description>In a battle of home-run-hitting teams, Encarnacion&#x2019;s three-run shot in the 11th inning sent Toronto to the divisional round, where it will face the Texas Rangers.</description>
+      <dc:creator>TYLER KEPNER</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 03:49:09 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Baseball</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Playoff Games</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Toronto Blue Jays</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Baltimore Orioles</category>
+    </item>
+    <item>
+      <title>Ex-Ally of Christie Links Cuomo to Cover-Up of Lane Closings</title>
+      <link>http://www.nytimes.com/2016/10/05/nyregion/christie-and-cuomo-cooperated-in-cover-up-of-lane-closings-ex-official-testifies.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/nyregion/christie-and-cuomo-cooperated-in-cover-up-of-lane-closings-ex-official-testifies.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/nyregion/christie-and-cuomo-cooperated-in-cover-up-of-lane-closings-ex-official-testifies.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/nyregion/05BRIDGEGATE/05BRIDGEGATE-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Gov. Andrew M. Cuomo of New York and Gov. Chris Christie of New Jersey at a news conference last week. An official said the governors agreed to issue a report falsely explaining the bridge lane closings in 2013 as a traffic study.</media:description>
+      <media:credit>Bryan Thomas for The New York Times</media:credit>
+      <description>David Wildstein testified that the governors agreed to issue a report falsely citing a traffic study for closing access lanes to the George Washington Bridge; a Cuomo aide denied the account.</description>
+      <dc:creator>KATE ZERNIKE</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 23:46:54 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">George Washington Bridge Scandal (2013)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Endorsements</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Elections, Governors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Governors (US)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Port Authority of New York and New Jersey</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Baroni, Bill</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Christie, Christopher J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Cuomo, Andrew M</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Foye, Patrick J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kelly, Bridget Anne</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Wildstein, David</category>
+    </item>
+    <item>
+      <title>Trinh Thi Ngo, Broadcaster Called &#x2018;Hanoi Hannah&#x2019; in Vietnam War, Dies</title>
+      <link>http://www.nytimes.com/2016/10/05/world/asia/trinh-thi-ngo-hanoi-hannah-vietnam-war.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/asia/trinh-thi-ngo-hanoi-hannah-vietnam-war.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/asia/trinh-thi-ngo-hanoi-hannah-vietnam-war.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/world/05HANNAH-web1/05HANNAH-web1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Trinh Thi Ngo, better known as &#x201C;Hanoi Hannah,&#x201D; in Ho Chi Minh City, Vietnam, last year.</media:description>
+      <media:credit>Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>The soft-spoken radio announcer both entertained and reproached American forces.</description>
+      <dc:creator>MIKE IVES</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 23:40:31 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Vietnam War</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Deaths (Obituaries)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ngo, Trinh Thi</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Hanoi (Vietnam)</category>
+    </item>
+    <item>
+      <title>The Public Editor: A Look at Clinton&#x2019;s Marriage Woes Raises a Question: Really?</title>
+      <link>http://www.nytimes.com/2016/10/05/public-editor/hillary-clinton-bill-clinton-marriage.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/public-editor/hillary-clinton-bill-clinton-marriage.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/public-editor/hillary-clinton-bill-clinton-marriage.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/opinion/05pubedWeb/05pubedWeb-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Hillary Clinton talking to the media on her campaign plane.</media:description>
+      <media:credit>Doug Mills/The New York Times</media:credit>
+      <description>A case can be made, perhaps, for a close look at how Hillary Clinton responded to her husband&#x2019;s infidelity. But not for this particular story.</description>
+      <dc:creator>LIZ SPAYD</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 19:15:58 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidential Election of 2016</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Clinton, Bill</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Clinton, Hillary Rodham</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+    </item>
+    <item>
+      <title>What in the World: In Senegal, Absolution Comes With a Wing and a Prayer</title>
+      <link>http://www.nytimes.com/2016/10/06/world/what-in-the-world/senegal-dakar-pithi.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/06/world/what-in-the-world/senegal-dakar-pithi.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/06/world/what-in-the-world/senegal-dakar-pithi.html?partner=rss&amp;emc=rss"/>
+      <description>In Dakar and other cities, men stand on street corners with cages of red-billed firefinches, which people buy and release to get rid of sins and anxiety.</description>
+      <dc:creator>JAIME YAYA BARRY</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 09:00:25 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Senegal</category>
+    </item>
+    <item>
+      <title>German Prosecutors Side With Satire, Not Turkish President</title>
+      <link>http://www.nytimes.com/2016/10/05/world/europe/jan-bohmermann-recep-tayyip-erdogan.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/world/europe/jan-bohmermann-recep-tayyip-erdogan.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/world/europe/jan-bohmermann-recep-tayyip-erdogan.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/world/05germany-web/05germany-web-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Jan B&#xF6;hmermann</media:description>
+      <media:credit>Britta Pedersen/Agence France-Presse &#x2014; Getty Images</media:credit>
+      <description>Prosecutors saw no crime in a satirical poem about Recep Tayyip Erdogan, the Turkish president, and dropped charges against a German comedian.</description>
+      <dc:creator>MELISSA EDDY</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 20:18:22 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bohmermann, Jan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Erdogan, Recep Tayyip</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Turkey</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Comedy and Humor</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Germany</category>
+    </item>
+    <item>
+      <title>Union Boss (and Former Miss America) Hits the Road in &#x2018;Fun Home&#x2019;</title>
+      <link>http://www.nytimes.com/2016/10/05/theater/union-boss-and-former-miss-america-hits-the-road-in-fun-home.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/theater/union-boss-and-former-miss-america-hits-the-road-in-fun-home.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/theater/union-boss-and-former-miss-america-hits-the-road-in-fun-home.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/05/arts/05SHINDLE1/05SHINDLE1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Kate Shindle as the cartoonist Alison Bechdel in &#x201C;Fun Home.&#x201D;</media:description>
+      <media:credit>Joan Marcus</media:credit>
+      <description>Kate Shindle will portray lesbian cartoonist Alison Bechdel in the traveling production of the Tony-winning musical while also leading Actors&#x2019; Equity.</description>
+      <dc:creator>MICHAEL PAULSON</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 20:38:55 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Actors and Actresses</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Shindle, Kate</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Fun Home (Play)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bechdel, Alison</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Actors Equity Assn</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Miss America Organization</category>
+    </item>
+    <item>
+      <title>Facebook Marketplace Goes Wrong: Sex, Guns and Baby Hedgehogs</title>
+      <link>http://www.nytimes.com/2016/10/05/technology/facebook-marketplace-posts-violate-policies.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/technology/facebook-marketplace-posts-violate-policies.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/technology/facebook-marketplace-posts-violate-policies.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/04/us/05xp-facebook/05xp-facebook-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Posts advertising the sale of illegal drugs were featured on Facebook&#x2019;s new Marketplace tab on Monday.</media:description>
+      <media:credit>Sam Hodgson for The New York Times</media:credit>
+      <description>The social media giant says a technical issue allowed inappropriate content to be offered for sale.</description>
+      <dc:creator>JONAH ENGEL BROMWICH</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 19:52:19 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">E-Commerce</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Facebook Inc</category>
+    </item>
+    <item>
+      <title>Who Is Elena Ferrante? Supporters Say NOYB</title>
+      <link>http://www.nytimes.com/2016/10/05/books/who-is-elena-ferrante-supporters-say-noyb.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/05/books/who-is-elena-ferrante-supporters-say-noyb.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/05/books/who-is-elena-ferrante-supporters-say-noyb.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/03/arts/03FERRANTE/03FERRANTE-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Some of Elena Ferrante&#x2019;s books translated into English.</media:description>
+      <media:credit>Chris Warde-Jones for The New York Times</media:credit>
+      <description>Writers and critics from many quarters responded quickly to an Italian journalist&#x2019;s excavation of financial records in an effort to identify the author who writes as Elena Ferrante.</description>
+      <dc:creator>RACHEL DONADIO and JENNIFER SCHUESSLER</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 01:22:26 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Writing and Writers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">News and News Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">New York Review of Books</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ferrante, Elena</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Raja, Anita</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Gatti, Claudio</category>
+    </item>
+    <item>
+      <title>Nonfiction: &#x2018;The Bitch in the House&#x2019; Has a Sequel: &#x2018;The Bitch Is Back&#x2019;</title>
+      <link>http://www.nytimes.com/2016/10/09/books/review/bitch-is-back-cathi-hanauer.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/09/books/review/bitch-is-back-cathi-hanauer.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/09/books/review/bitch-is-back-cathi-hanauer.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/09/books/review/09Gottlieb-web/09Gottlieb-web-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Cathi Hanauer</media:description>
+      <media:credit>Phoebe Jones</media:credit>
+      <description>An anthology edited by Cathi Hanauer taps the experiences of women reporting from middle age.</description>
+      <dc:creator>LORI GOTTLIEB</dc:creator>
+      <pubDate>Wed, 05 Oct 2016 09:00:02 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Bitch Is Back (Book)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Hanauer, Cathi</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Books and Literature</category>
+    </item>
+    <item>
+      <title>Cultural Studies: The Rise of the &#x2018;Bromosexual&#x2019; Friendship</title>
+      <link>http://www.nytimes.com/2016/10/07/fashion/mens-style/gay-straight-men-friendship.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/07/fashion/mens-style/gay-straight-men-friendship.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/07/fashion/mens-style/gay-straight-men-friendship.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/07/fashion/07BROMO1/07BROMO1-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>Lucas Whitehead, right, and his roommate Ben Moss in Fort Greene, Brooklyn.</media:description>
+      <media:credit>Andrew White for The New York Times</media:credit>
+      <description>The issues that once kept straight men and gay men apart are dissolving, in real life and in popular culture.</description>
+      <dc:creator>JIM FARBER</dc:creator>
+      <pubDate>Tue, 04 Oct 2016 20:45:21 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Friendship</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Men and Boys</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Books and Literature</category>
+    </item>
+    <item>
+      <title>Women Shun the Maternity Smock, and Stores Race to Catch Up</title>
+      <link>http://www.nytimes.com/2016/10/04/business/women-shun-the-maternity-smock-and-stores-race-to-catch-up.html?partner=rss&amp;emc=rss</link>
+      <guid isPermaLink="true">http://www.nytimes.com/2016/10/04/business/women-shun-the-maternity-smock-and-stores-race-to-catch-up.html</guid>
+      <atom:link rel="standout" href="http://www.nytimes.com/2016/10/04/business/women-shun-the-maternity-smock-and-stores-race-to-catch-up.html?partner=rss&amp;emc=rss"/>
+      <media:content url="https://static01.nyt.com/images/2016/10/04/business/04MATERNITY1-web/04MATERNITY1-web-moth.jpg" medium="image" height="151" width="151"/>
+      <media:description>New fabric technologies, like the blend of nylon and spandex used in this striped top by Rosie Pope, has allowed for stretchier, quick-drying maternity wear.</media:description>
+      <media:credit>Karsten Moran for The New York Times</media:credit>
+      <description>The maternity aisle is looking more like a high-end boutique as cultural attitudes about pregnancy shift from bigger and baggier to sleeker and stretchier.</description>
+      <dc:creator>RACHEL ABRAMS</dc:creator>
+      <pubDate>Mon, 03 Oct 2016 21:49:29 GMT</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Shopping and Retail</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Pregnancy and Childbirth</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Fashion and Apparel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/mdes">Women and Girls</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">E-Commerce</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Asos.com Ltd</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Destination Maternity Corporation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org_all">Baby Bump Maternity and Children's</category>
+    </item>
+  </channel>
+</rss>
