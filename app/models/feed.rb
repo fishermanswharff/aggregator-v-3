@@ -2,7 +2,7 @@ require 'rss'
 require 'open-uri'
 
 class Feed < ActiveRecord::Base
-  after_create :save_description
+  after_create :save_description #, :save_name
 
   has_many :feed_topics
   has_many :topics,
@@ -25,9 +25,9 @@ class Feed < ActiveRecord::Base
 
   def fetch_feed
     Feedjira::Feed.fetch_and_parse url
+  rescue Feedjira::NoParserAvailable => e
+    # do something?
   end
-
-  private
 
   def valid_feed?
     begin
@@ -37,13 +37,21 @@ class Feed < ActiveRecord::Base
     end
   end
 
+  private
+
   def parsed_feed
     RSS::Parser.parse(url)
   end
 
   def save_description
     parsed = fetch_feed
-    self.description = parsed.description || ''
-    self.save!
+    if parsed
+      self.description = parsed.description || ''
+    end
+    self.save
+  end
+
+  def save_name
+    parsed = fetch_feed
   end
 end

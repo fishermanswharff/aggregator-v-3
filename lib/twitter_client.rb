@@ -11,7 +11,7 @@ class TwitterClient
     client.home_timeline
   end
 
-  def get_client(token: token, secret: secret)
+  def get_client(token: nil, secret: nil)
     Twitter::REST::Client.new do |config|
       config.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
       config.consumer_secret = ENV["TWITTER_CONSUMER_SECRET"]
