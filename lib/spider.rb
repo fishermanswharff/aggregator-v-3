@@ -10,11 +10,24 @@ class Spider
   end
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
-    # depth.times do
-    # end
-    html = open(urls.first).read
-    page = Nokogiri::HTML(html)
-    page_uri = URI(urls.first)
+    depth.times do
+      next_urls = []
+      urls.each do |url|
+        # open the url
+        # if the url doesn't open, next
+        # if url is a redirect, return the url's base_uri
+        # turn the url content into a Nokogiri object (parsed_url)
+        # next if parsed_url == nil
+        # save the url, because we've visited it.
+        # if we've visited the page_limit count, return
+        # add to next_urls by parsing the page of all urls on the page, minus already_visited
+        # next_urls.uniq!
+      end
+      urls = next_urls
+    end
+    # html = open(urls.first).read
+    # page = Nokogiri::HTML(html)
+    # page_uri = URI(urls.first)
     # robots_txt = `curl #{url.gsub(/\/$/, '')}/robots.txt`
     # feeds_added = []
     # head_links = parse_head(url: url, html: page.xpath('//head'))
