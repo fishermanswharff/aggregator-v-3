@@ -3,7 +3,7 @@ require 'rss'
 
 RSpec.describe Spider do
   let(:spider) { Spider.new }
-  let(:url) { 'http://www.nytimes.com/services/xml/rss/index.html' }
+  let(:url) { FactoryGirl.create(:nytimes_homepage_feed) }
   let(:html) { File.read(File.join(Rails.root, 'spec', 'fixtures', 'nytimes_fixture.html')) }
 
   before :each do
