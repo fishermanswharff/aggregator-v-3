@@ -14,9 +14,17 @@ class Spider
       next_urls = []
       urls.each do |url|
         # open the url
+        url_object = open(url)
         # if the url doesn't open, next
+        next if url_object.nil?
         # if url is a redirect, return the url's base_uri
+        url = update_if_redirected(url, url_object)
         # turn the url content into a Nokogiri object (parsed_url)
+        raw = url_object.read
+        parsed_url = Nokogiri::HTML(raw)
+        next if parsed_url.nil?
+
+
         # next if parsed_url == nil
         # save the url, because we've visited it.
         # if we've visited the page_limit count, return
@@ -32,6 +40,21 @@ class Spider
     # feeds_added = []
     # head_links = parse_head(url: url, html: page.xpath('//head'))
     # body_links = parse_body(url: url, html: page.xpath('//body'))
+  end
+
+  def open_url(url)
+    url_object = open(url)
+  rescue
+    p 'Unable to open url: ' + url
+  ensure
+    return url_object
+  end
+
+  def update_if_redirected(url, url_object)
+    unless url == url_object.base_uri.to_s
+      return url_object.base_uri.to_s
+    end
+    url
   end
 
   def scrape_links(url: '', nk_obj:)
