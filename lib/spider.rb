@@ -10,9 +10,11 @@ class Spider
   end
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
-    depth.times do
+    # TODO: rescue RuntimeError: redirection forbidden from open-uri
+    depth.times do |i|
       next_urls = []
       urls.each do |url|
+        puts "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
         # open the url
         url_object = open(url)
         # if the url doesn't open, next
@@ -25,21 +27,16 @@ class Spider
         doc = Nokogiri::HTML(raw_html)
         # continue to the next one if there's no doc
         next if doc.nil?
-        
         # save the url, because we've visited it.
+        already_visited[url] = true
         # if we've visited the page_limit count, return
+        return if already_visited.keys.length == page_limit
         # add to next_urls by parsing the page of all urls on the page, minus already_visited
-        # next_urls.uniq!
+        next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys)
+        next_urls.uniq!
       end
       urls = next_urls
     end
-    # html = open(urls.first).read
-    # page = Nokogiri::HTML(html)
-    # page_uri = URI(urls.first)
-    # robots_txt = `curl #{url.gsub(/\/$/, '')}/robots.txt`
-    # feeds_added = []
-    # head_links = parse_head(url: url, html: page.xpath('//head'))
-    # body_links = parse_body(url: url, html: page.xpath('//body'))
   end
 
   def open_url(url)
@@ -55,6 +52,14 @@ class Spider
       return url_object.base_uri.to_s
     end
     url
+  end
+
+  def scrape_page_links(doc:, current_url:)
+    urls = doc.xpath('//a').map(&:attributes).map { |attr| attr['href'].value }
+    urls.map do |url|
+      uri = UrlUtils.to_uri(url)
+      uri.relative? ? current_url + "/#{url}" : uri.to_s
+    end
   end
 
   def scrape_links(url: '', nk_obj:)
