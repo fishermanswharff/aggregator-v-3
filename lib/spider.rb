@@ -6,7 +6,7 @@ class Spider
   attr_reader :already_visited
 
   def initialize
-    @already_visited = {}
+    @already_visited = {} # turn this into indexing in a db? maybe mongo?
   end
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
@@ -19,13 +19,13 @@ class Spider
         next if url_object.nil?
         # if url is a redirect, return the url's base_uri
         url = update_if_redirected(url, url_object)
+        # extract the raw html from the url_object
+        raw_html = url_object.read
         # turn the url content into a Nokogiri object (parsed_url)
-        raw = url_object.read
-        parsed_url = Nokogiri::HTML(raw)
-        next if parsed_url.nil?
-
-
-        # next if parsed_url == nil
+        doc = Nokogiri::HTML(raw_html)
+        # continue to the next one if there's no doc
+        next if doc.nil?
+        
         # save the url, because we've visited it.
         # if we've visited the page_limit count, return
         # add to next_urls by parsing the page of all urls on the page, minus already_visited
