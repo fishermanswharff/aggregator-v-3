@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :url, class: String do
     skip_create
 
-    ignore do
+    transient do
       protocol 'http://'
       subdomain Faker::Internet.domain_word
       domain_name Faker::Internet.domain_name
