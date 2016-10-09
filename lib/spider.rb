@@ -10,10 +10,9 @@ class Spider
   end
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
-    # TODO: rescue RuntimeError: redirection forbidden from open-uri
+    next_urls = []
     depth.times do |i|
-      next_urls = []
-      urls.each do |url|
+      urls.flatten.each do |url|
         puts "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
         # open the url
         url_object = open(url)
@@ -37,6 +36,8 @@ class Spider
       end
       urls = next_urls
     end
+  rescue => e
+    crawl_web(next_urls)
   end
 
   def open_url(url)
@@ -55,10 +56,10 @@ class Spider
   end
 
   def scrape_page_links(doc:, current_url:)
-    urls = doc.xpath('//a').map(&:attributes).map { |attr| attr['href'].value }
+    urls = doc.xpath('//a').map(&:attributes).map { |attr| attr['href']&.value }.compact
     urls.map do |url|
       uri = UrlUtils.to_uri(url)
-      uri.relative? ? current_url + "/#{url}" : uri.to_s
+      uri.relative? ? current_url.chomp('/') + "/#{url}" : uri.to_s
     end
   end
 
