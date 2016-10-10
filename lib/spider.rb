@@ -11,33 +11,36 @@ class Spider
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
     next_urls = []
+    current_url = ''
     depth.times do |i|
       urls.flatten.each do |url|
+        current_url = url
+        url_object = open(url) # open the url
+        next if url_object.nil? # if the url doesn't open, next
+        url = update_if_redirected(url, url_object) # if url is a redirect, return the url's base_uri
+        raw_html = url_object.read # extract the raw html from the url_object
+        doc = Nokogiri::HTML(raw_html) # turn the url content into a Nokogiri object (parsed_url)
+        next if doc.nil? # continue to the next one if there's no doc
+        already_visited[url] = true # save the url, because we've visited it.
+        if already_visited.keys.length == page_limit # if we've visited the page_limit count, return
+          # write a csv file
+          # single column
+          # header => url
+          # iterate through next_urls that haven't been visited, write them to a file.
+        end
         puts "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
-        # open the url
-        url_object = open(url)
-        # if the url doesn't open, next
-        next if url_object.nil?
-        # if url is a redirect, return the url's base_uri
-        url = update_if_redirected(url, url_object)
-        # extract the raw html from the url_object
-        raw_html = url_object.read
-        # turn the url content into a Nokogiri object (parsed_url)
-        doc = Nokogiri::HTML(raw_html)
-        # continue to the next one if there's no doc
-        next if doc.nil?
-        # save the url, because we've visited it.
-        already_visited[url] = true
-        # if we've visited the page_limit count, return
-        return if already_visited.keys.length == page_limit
-        # add to next_urls by parsing the page of all urls on the page, minus already_visited
-        next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys)
-        next_urls.uniq!
+        next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
+        next_urls.uniq! # we only want unique urls
       end
       urls = next_urls
     end
   rescue => e
-    crawl_web(next_urls)
+    # current_url caused an error, lets get rid of it
+    next_urls.delete(current_url) if next_urls.include?(current_url)
+    already_visited.delete(current_url) if already_visited.keys.include?(current_url)
+    crawl_web(next_urls - already_visited.keys)
+  ensure
+
   end
 
   def open_url(url)
