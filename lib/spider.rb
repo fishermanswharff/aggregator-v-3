@@ -23,19 +23,21 @@ class Spider
         next if doc.nil? # continue to the next one if there's no doc
         already_visited[url] = true # save the url, because we've visited it.
         if already_visited.keys.length == page_limit # if we've visited the page_limit count, return
+          
           # write a csv file
           # single column
           # header => url
           # iterate through next_urls that haven't been visited, write them to the file
           # use this file to start the next crawl
         end
-        puts "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
+        Rails.logger.debug "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
         next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
         next_urls.uniq! # we only want unique urls
       end
       urls = next_urls
     end
   rescue => e
+    Rails.logger.debug "Error parsing url #{current_url}: #{e}"
     # current_url caused an error, lets get rid of it
     next_urls.delete(current_url) if next_urls.include?(current_url)
     already_visited.delete(current_url) if already_visited.keys.include?(current_url)
@@ -85,6 +87,7 @@ class Spider
         end
       end
     rescue => e
+      Rails.logger.debug "Error parsing head #{url}: #{e}"
     end
   end
 
@@ -104,6 +107,7 @@ class Spider
       end
     end
   rescue => e
+    Rails.logger.debug "Error parsing url #{url}: #{e}"
   ensure
     return saved_feeds
   end
