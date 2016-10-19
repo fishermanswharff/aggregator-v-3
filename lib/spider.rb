@@ -23,12 +23,12 @@ class Spider
         next if doc.nil? # continue to the next one if there's no doc
         already_visited[url] = true # save the url, because we've visited it.
         if already_visited.keys.length == page_limit # if we've visited the page_limit count, return
-          
           # write a csv file
           # single column
           # header => url
           # iterate through next_urls that haven't been visited, write them to the file
           # use this file to start the next crawl
+          return
         end
         Rails.logger.debug "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
         next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
