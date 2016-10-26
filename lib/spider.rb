@@ -3,26 +3,30 @@ require 'uri'
 require 'open-uri'
 
 class Spider
-  attr_reader :already_visited
+  include UrlUtils
+
+  attr_accessor :already_visited,
+    :next_urls,
+    :current_url
 
   def initialize
     @already_visited = {} # turn this into indexing in a db? maybe mongo?
+    @next_urls = []
+    @current_url = ''
   end
 
   def crawl_web(*urls, depth: 2, page_limit: 100)
-    next_urls = []
-    current_url = ''
     depth.times do |i|
       urls.flatten.each do |url|
-        current_url = url
+        @current_url = url
         url_object = open(url) # open the url
         next if url_object.nil? # if the url doesn't open, next
         url = update_if_redirected(url, url_object) # if url is a redirect, return the url's base_uri
         raw_html = url_object.read # extract the raw html from the url_object
         doc = Nokogiri::HTML(raw_html) # turn the url content into a Nokogiri object
         next if doc.nil? # continue to the next one if there's no doc
-        already_visited[url] = true # save the url, because we've visited it.
-        if already_visited.keys.length == page_limit # if we've visited the page_limit count, return
+        @already_visited[url] = true # save the url, because we've visited it.
+        if @already_visited.keys.length == page_limit # if we've visited the page_limit count, return
           # write a csv file
           # single column
           # header => url
@@ -31,8 +35,8 @@ class Spider
           return
         end
         Rails.logger.debug "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
-        next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
-        next_urls.uniq! # we only want unique urls
+        @next_urls = next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
+        @next_urls.uniq! # we only want unique urls
       end
       urls = next_urls
     end
@@ -40,10 +44,13 @@ class Spider
     Rails.logger.debug "Error parsing url #{current_url}: #{e}"
     # current_url caused an error, lets get rid of it
     next_urls.delete(current_url) if next_urls.include?(current_url)
-    already_visited.delete(current_url) if already_visited.keys.include?(current_url)
-    crawl_web(next_urls - already_visited.keys)
+    @already_visited.delete(current_url) if @already_visited.keys.include?(current_url)
+    crawl_web(next_urls - @already_visited.keys)
   ensure
-    # ?
+    Rails.logger.info "Urls parsed: #{@already_visited.keys.join(', ')}"
+    @already_visited = {}
+    @next_urls = []
+    @current_url = ''
   end
 
   def open_url(url)
@@ -63,9 +70,10 @@ class Spider
 
   def scrape_page_links(doc:, current_url:)
     urls = doc.xpath('//a').map(&:attributes).map { |attr| attr['href']&.value }.compact
+    current_uri = to_uri(current_url)
     urls.map do |url|
-      uri = UrlUtils.to_uri(url)
-      uri.relative? ? current_url.chomp('/') + "/#{url}" : uri.to_s
+      uri = to_uri(url)
+      uri.relative? ? current_uri.merge(uri) : uri.to_s
     end
   end
 
