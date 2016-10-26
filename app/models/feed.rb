@@ -27,6 +27,7 @@ class Feed < ActiveRecord::Base
     Feedjira::Feed.fetch_and_parse url
   rescue Feedjira::NoParserAvailable => e
     # do something?
+    Rails.logger.debug "#{e}"
   end
 
   def valid_feed?
@@ -52,6 +53,6 @@ class Feed < ActiveRecord::Base
   end
 
   def save_name
-    parsed = fetch_feed
+    # parsed = fetch_feed
   end
 end

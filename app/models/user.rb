@@ -85,6 +85,7 @@ class User < ActiveRecord::Base
       parsed
     end
   rescue Faraday::ConnectionFailed => e
+    Rails.logger.debug "#{e}"
     return []
   end
 
