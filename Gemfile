@@ -36,6 +36,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0' # build your objects in test environments
   gem 'database_cleaner' # cleans up the database in test env
   gem 'codeclimate-test-reporter', require: nil # code linter/evaluator
+  gem 'webmock' # stub out http requests
 end
 
 group :development do
