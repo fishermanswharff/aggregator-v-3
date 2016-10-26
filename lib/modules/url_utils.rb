@@ -3,7 +3,7 @@ require 'open-uri'
 
 module UrlUtils
 
-  def self.to_uri(string)
+  def to_uri(string)
     URI(string)
   end
 end
