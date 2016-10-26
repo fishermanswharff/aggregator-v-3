@@ -7,8 +7,25 @@ RSpec.describe Spider do
   let(:html) { File.read(File.join(Rails.root, 'spec', 'fixtures', 'nytimes_fixture.html')) }
 
   before :each do
-    allow(RSS::Parser).to receive(:parse).with(anything()).and_return(FactoryGirl.build(:rss_parsed_feed))
-    allow(Feedjira::Feed).to receive(:fetch_and_parse).with(anything()).and_return(FactoryGirl.build(:feedjira_parsed_feed))
+    allow(RSS::Parser)
+      .to receive(:parse)
+      .with(anything())
+      .and_return(FactoryGirl.build(:rss_parsed_feed))
+    
+    allow(Feedjira::Feed)
+      .to receive(:fetch_and_parse)
+      .with(anything())
+      .and_return(FactoryGirl.build(:feedjira_parsed_feed))
+  end
+
+  describe 'External request' do
+    it 'queries FactoryGirl contributors on GitHub' do
+      uri = URI('https://api.github.com/repos/thoughtbot/factory_girl/contributors')
+
+      response = Net::HTTP.get(uri)
+
+      expect(response).to be_an_instance_of(String)
+    end
   end
 
   describe 'spider' do
