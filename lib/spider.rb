@@ -5,7 +5,7 @@ require 'open-uri'
 class Spider
   include UrlUtils
 
-  attr_accessor :already_visited,
+  attr_reader :already_visited,
     :next_urls,
     :current_url
 
@@ -18,6 +18,7 @@ class Spider
   def crawl_web(*urls, depth: 2, page_limit: 100)
     depth.times do |i|
       urls.flatten.each do |url|
+        next if @already_visited.keys.include? url
         @current_url = url
         url_object = open(url) # open the url
         next if url_object.nil? # if the url doesn't open, next
