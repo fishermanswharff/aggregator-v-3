@@ -37,13 +37,12 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.before(:each) do
-    stub_request(:get, /api\.github\.com/).
-      with(headers: { 'Accept' => '*/*', 'User-Agent' => 'Ruby' }).
-      to_return(status: 200, body: "stubbed response", headers: {})
-
-    stub_request(:get, 'http://www.nytimes.com/services/xml/rss/index.html').
-       with(headers: {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
-       to_return(status: 200, body: File.read(File.join(Rails.root, 'spec', 'fixtures', 'nytimes_fixture.html')), headers: {})
+    
+    # webmock
+    stub_request(:get, 'http://www.nytimes.com/services/xml/rss/index.html')
+      .with(headers: { 'Accept' => '*/*', 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent' => 'Ruby' })
+      .to_return(status: 200, body: File.read(File.join(Rails.root, 'spec', 'fixtures', 'nytimes_fixture.html')), headers: {})
+  
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
