@@ -18,16 +18,6 @@ RSpec.describe Spider do
       .and_return(FactoryGirl.build(:feedjira_parsed_feed))
   end
 
-  describe 'External request' do
-    it 'queries FactoryGirl contributors on GitHub' do
-      uri = URI('https://api.github.com/repos/thoughtbot/factory_girl/contributors')
-
-      response = Net::HTTP.get(uri)
-
-      expect(response).to be_an_instance_of(String)
-    end
-  end
-
   describe 'spider' do
     it 'is an instance of Spider' do
       expect(spider).to be_a Spider
@@ -35,7 +25,6 @@ RSpec.describe Spider do
   end
 
   describe '#crawl_web' do
-
     it 'crawls the web' do
       results = spider.crawl_web(url)
       expect(results).to be_truthy
