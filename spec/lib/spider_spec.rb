@@ -22,12 +22,21 @@ RSpec.describe Spider do
     it 'is an instance of Spider' do
       expect(spider).to be_a Spider
     end
+
+
+    it 'clears all the instance variables' do
+      expect(spider.instance_variable_get(:@already_visited)).to eq Hash.new
+      expect(spider.instance_variable_get(:@next_urls)).to eq []
+      expect(spider.instance_variable_get(:@current_url)).to eq ''
+    end
   end
 
   describe '#crawl_web' do
-    it 'crawls the web' do
-      results = spider.crawl_web(url)
-      expect(results).to be_truthy
+
+    let(:results) { spider.crawl_web(url) }
+
+    it 'only opens a uri once' do
+      # shrug
     end
   end
 

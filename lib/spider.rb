@@ -18,16 +18,16 @@ class Spider
   def crawl_web(*urls, depth: 2, page_limit: 100)
     depth.times do |i|
       urls.flatten.each do |url|
-        next if @already_visited.keys.include? url
         @current_url = url
+        next if already_visited.keys.include? @current_url.to_s.chomp('/')
         url_object = open(url) # open the url
         next if url_object.nil? # if the url doesn't open, next
         url = update_if_redirected(url, url_object) # if url is a redirect, return the url's base_uri
         raw_html = url_object.read # extract the raw html from the url_object
         doc = Nokogiri::HTML(raw_html) # turn the url content into a Nokogiri object
         next if doc.nil? # continue to the next one if there's no doc
-        @already_visited[url] = true # save the url, because we've visited it.
-        if @already_visited.keys.length == page_limit # if we've visited the page_limit count, return
+        already_visited[url] = true # save the url, because we've visited it.
+        if already_visited.keys.length == page_limit # if we've visited the page_limit count, return
           # write a csv file
           # single column
           # header => url
@@ -35,7 +35,7 @@ class Spider
           # use this file to start the next crawl
           return
         end
-        Rails.logger.debug "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
+        Rails.logger.info "parsing url: #{url}, current depth: #{i}, number links visited: #{already_visited.keys.length}"
         @next_urls = next_urls.concat(scrape_page_links(doc: doc, current_url: url) - already_visited.keys) # add to next_urls by parsing the page of all urls on the page, minus already_visited
         @next_urls.uniq! # we only want unique urls
       end
@@ -43,12 +43,10 @@ class Spider
     end
   rescue => e
     Rails.logger.debug "Error parsing url #{current_url}: #{e}"
-    # current_url caused an error, lets get rid of it
-    next_urls.delete(current_url) if next_urls.include?(current_url)
-    @already_visited.delete(current_url) if @already_visited.keys.include?(current_url)
-    crawl_web(next_urls - @already_visited.keys)
+    next_urls.delete(current_url) if next_urls.include?(current_url) # current_url caused an error, lets get rid of it
+    @already_visited.delete(current_url) if @already_visited.keys.include?(current_url) # current_url caused an error, lets get rid of it
+    crawl_web(next_urls - @already_visited.keys, depth: depth, page_limit: page_limit) # start it over
   ensure
-    Rails.logger.info "Urls parsed: #{@already_visited.keys.join(', ')}"
     @already_visited = {}
     @next_urls = []
     @current_url = ''
@@ -74,7 +72,7 @@ class Spider
     current_uri = to_uri(current_url)
     urls.map do |url|
       uri = to_uri(url)
-      uri.relative? ? current_uri.merge(uri) : uri.to_s
+      uri.relative? ? current_uri.merge(uri).to_s : uri.to_s
     end
   end
 
@@ -119,15 +117,5 @@ class Spider
     Rails.logger.debug "Error parsing url #{url}: #{e}"
   ensure
     return saved_feeds
-  end
-
-  private
-
-  def current_link
-    @current_link
-  end
-
-  def current_link=(value)
-    @current_link = value
   end
 end
