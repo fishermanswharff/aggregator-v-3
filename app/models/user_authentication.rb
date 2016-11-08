@@ -13,7 +13,7 @@ class UserAuthentication < ActiveRecord::Base
       uid: params['user_id'],
       token: params['oauth_token'],
       token_expires_at: 1.week.from_now.to_datetime,
-      params: params.to_json,
+      params: params,
     )
   end
 end
